@@ -16,7 +16,7 @@ export default function DisclaimerPage() {
           </section>
           <section>
             <h2 className="text-base font-semibold text-white mb-2">外部リンクについて</h2>
-            <p>本サイトからリンクされている外部サービスは独立して運営されており、それらのコンテンツ・プライバシーポリシー・運営方針について当サイトは責任を負いません。</p>
+            <p>本サイトに掲載されているサービスは運営者が開発・運営しています。ただし、各サービスは独立して動作しており、障害・メンテナンス等により一時的に利用できない場合があります。</p>
           </section>
           <section>
             <h2 className="text-base font-semibold text-white mb-2">著作権について</h2>
