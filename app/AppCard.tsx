@@ -61,7 +61,7 @@ export default function AppCard({ name, fqdn, staticDescription }: { name: strin
               alt=""
               width={16}
               height={16}
-              className="shrink-0 rounded-sm"
+              className="shrink-0 rounded-sm object-contain"
               onError={(e) => (e.currentTarget.style.display = "none")}
               unoptimized={false}
             />
