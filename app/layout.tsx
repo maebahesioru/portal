@@ -7,7 +7,7 @@ import CookieBanner from "./CookieBanner";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin", "latin-ext"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const SITE_URL = "https://portal.hikamer.f5.si";
+const SITE_URL = "https://hikamer.f5.si";
 const SITE_NAME = "hikamer's portal";
 const DESCRIPTION = "ヒカマー界隈のWebサービス・ツール・ゲーム集ポータルサイト。SearXNG、UNO、ヒカマーズライブラリなど多数のサービスを公開中。";
 

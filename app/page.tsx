@@ -35,7 +35,7 @@ export default async function Home() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "hikamer's portal",
-            url: "https://portal.hikamer.f5.si",
+            url: "https://hikamer.f5.si",
             description: "ヒカマー界隈のWebサービス・ツール・ゲーム集ポータルサイト",
             author: { "@type": "Person", name: "hikamer", url: "https://x.com/maebahesioru2" },
           }),
