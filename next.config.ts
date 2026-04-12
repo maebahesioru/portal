@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "**" }],
+  },
   async headers() {
     return [
       {
