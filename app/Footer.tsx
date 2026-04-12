@@ -5,6 +5,7 @@ export default function Footer() {
         <span>© 2026 hikamer</span>
         <div className="flex items-center gap-6">
           <a href="/about" className="hover:text-gray-300 transition-colors">About</a>
+          <a href="/disclaimer" className="hover:text-gray-300 transition-colors">免責事項</a>
           <a href="/privacy" className="hover:text-gray-300 transition-colors">プライバシーポリシー</a>
           <a href="/contact" className="hover:text-gray-300 transition-colors">お問い合わせ</a>
         </div>
