@@ -1,6 +1,5 @@
-import AppCard from "./AppCard";
+import AppGrid from "./AppGrid";
 import Footer from "./Footer";
-import descriptions from "./app-descriptions";
 
 type CoolifyApp = { name: string; fqdn: string | null };
 
@@ -60,13 +59,7 @@ export default async function Home() {
       </div>
 
       {/* Grid */}
-      <div className="max-w-6xl mx-auto px-6 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {apps.map((app) => (
-            <AppCard key={app.name} name={app.name} fqdn={app.fqdn!} staticDescription={descriptions[app.name]} />
-          ))}
-        </div>
-      </div>
+      <AppGrid apps={apps.map((a) => ({ name: a.name, fqdn: a.fqdn! }))} />
 
       {/* About */}
       <div className="max-w-6xl mx-auto px-6 pb-10">
