@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
     const buf = Buffer.from(await res.arrayBuffer());
     const webp = await sharp(buf).resize(32, 32, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } }).webp({ quality: 80 }).toBuffer();
 
-    return new NextResponse(webp, {
+    return new NextResponse(webp as unknown as BodyInit, {
       headers: {
         "Content-Type": "image/webp",
         "Cache-Control": "public, max-age=86400",
