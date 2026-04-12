@@ -6,7 +6,10 @@ export default function CookieBanner() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("cookie_consent")) setShow(true);
+    const timer = setTimeout(() => {
+      if (!localStorage.getItem("cookie_consent")) setShow(true);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   const accept = () => {
@@ -22,7 +25,7 @@ export default function CookieBanner() {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6" aria-hidden={!show}>
       <div className="max-w-2xl mx-auto bg-gray-900 border border-white/10 rounded-2xl p-5 shadow-2xl flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <p className="text-sm text-gray-300 flex-1">
           本サイトはGoogle AdSenseによる広告配信のためCookieを使用しています。
