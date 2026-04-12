@@ -32,9 +32,18 @@ export async function GET(req: NextRequest) {
 
     const base = new URL(url);
     const toHttps = (u: string | null) => u ? u.replace(/^http:\/\//i, "https://") : null;
-    const favicon = `https://${base.hostname}/favicon.ico`;
 
-    return NextResponse.json({ title, description, ogImage: toHttps(ogImage), favicon });
+    // <link rel="icon"> or <link rel="shortcut icon"> を優先、なければ /favicon.ico
+    const faviconPath =
+      html.match(/<link[^>]+rel=["'][^"']*icon[^"']*["'][^>]+href=["']([^"']+)["']/i)?.[1] ??
+      html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["'][^"']*icon[^"']*["']/i)?.[1] ??
+      "/favicon.ico";
+
+    const favicon = faviconPath.startsWith("http")
+      ? faviconPath
+      : `${base.origin}${faviconPath.startsWith("/") ? "" : "/"}${faviconPath}`;
+
+    return NextResponse.json({ title, description, ogImage: toHttps(ogImage), favicon: toHttps(favicon) });
   } catch {
     return NextResponse.json({});
   }
