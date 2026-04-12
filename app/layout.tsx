@@ -53,6 +53,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ja" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <head>
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link rel="preconnect" href="https://fundingchoicesmessages.google.com" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9868361167191737" crossOrigin="anonymous" />
       </head>
       <body className="min-h-full flex flex-col">
