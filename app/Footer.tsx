@@ -8,6 +8,7 @@ export default function Footer() {
           <a href="/disclaimer" className="hover:text-gray-300 transition-colors">免責事項</a>
           <a href="/privacy" className="hover:text-gray-300 transition-colors">プライバシーポリシー</a>
           <a href="/contact" className="hover:text-gray-300 transition-colors">お問い合わせ</a>
+          <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">広告オプトアウト</a>
         </div>
       </div>
     </footer>
