@@ -38,7 +38,7 @@ export default function AppCard({ name, fqdn, staticDescription }: { name: strin
           <div className="w-full h-full animate-pulse bg-white/5" />
         ) : showOgImage ? (
           <Image
-            src={`/api/img?url=${encodeURIComponent(meta!.ogImage!)}&w=700`}
+            src={`/api/img?url=${encodeURIComponent(meta!.ogImage!)}&w=400`}
             alt={name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
