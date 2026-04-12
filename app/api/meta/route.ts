@@ -39,9 +39,10 @@ export async function GET(req: NextRequest) {
       html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["'][^"']*icon[^"']*["']/i)?.[1] ??
       "/favicon.ico";
 
-    const favicon = faviconPath.startsWith("http")
-      ? faviconPath
-      : `${base.origin}${faviconPath.startsWith("/") ? "" : "/"}${faviconPath}`;
+    const faviconClean = faviconPath.split("?")[0]; // クエリパラメータを除去
+    const favicon = faviconClean.startsWith("http")
+      ? faviconClean
+      : `${base.origin}${faviconClean.startsWith("/") ? "" : "/"}${faviconClean}`;
 
     return NextResponse.json({ title, description, ogImage: toHttps(ogImage), favicon: toHttps(favicon) });
   } catch {
