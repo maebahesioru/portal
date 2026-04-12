@@ -3,6 +3,7 @@ import sharp from "sharp";
 
 export async function GET(req: NextRequest) {
   const url = req.nextUrl.searchParams.get("url");
+  const w = parseInt(req.nextUrl.searchParams.get("w") ?? "32");
   if (!url) return new NextResponse(null, { status: 400 });
 
   try {
@@ -10,7 +11,10 @@ export async function GET(req: NextRequest) {
     if (!res.ok) return new NextResponse(null, { status: 404 });
 
     const buf = Buffer.from(await res.arrayBuffer());
-    const webp = await sharp(buf).resize(32, 32, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } }).webp({ quality: 80 }).toBuffer();
+    const webp = await sharp(buf)
+      .resize(w, null, { withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toBuffer();
 
     return new NextResponse(webp as unknown as BodyInit, {
       headers: {
