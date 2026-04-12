@@ -73,12 +73,12 @@ export default function AppCard({ name, fqdn, staticDescription }: { name: strin
           </span>
         </div>
         {!loading && (meta?.description || staticDescription) && (
-          <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed">{meta?.description ?? staticDescription}</p>
+          <p className="text-xs text-gray-400 line-clamp-2 leading-relaxed">{meta?.description ?? staticDescription}</p>
         )}
         {loading && (
           <span className="inline-block w-full h-3 rounded bg-white/5 animate-pulse" />
         )}
-        <span className="text-xs text-gray-600 truncate mt-0.5">{fqdn}</span>
+        <span className="text-xs text-gray-500 truncate mt-0.5">{fqdn}</span>
       </div>
     </a>
   );

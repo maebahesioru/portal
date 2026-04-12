@@ -59,10 +59,11 @@ export default async function Home() {
       </div>
 
       {/* Grid */}
-      <AppGrid apps={apps.map((a) => ({ name: a.name, fqdn: a.fqdn! }))} />
+      <main>
+        <AppGrid apps={apps.map((a) => ({ name: a.name, fqdn: a.fqdn! }))} />
 
-      {/* About */}
-      <div className="max-w-6xl mx-auto px-6 pb-10">
+        {/* About */}
+        <div className="max-w-6xl mx-auto px-6 pb-10">
         <div className="rounded-2xl border border-white/8 bg-white/3 p-8">
           <h2 className="text-xl font-bold text-white mb-4">ヒカマーとは？</h2>
           <div className="text-gray-400 leading-relaxed space-y-3 text-sm">
@@ -85,7 +86,8 @@ export default async function Home() {
             詳しくはヒカマーズWikiへ →
           </a>
         </div>
-      </div>
+        </div>
+      </main>
 
       <Footer />
     </div>

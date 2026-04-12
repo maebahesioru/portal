@@ -31,9 +31,10 @@ export async function GET(req: NextRequest) {
     const ogImage = getMeta("property", "og:image");
 
     const base = new URL(url);
-    const favicon = `${base.origin}/favicon.ico`;
+    const toHttps = (u: string | null) => u ? u.replace(/^http:\/\//i, "https://") : null;
+    const favicon = `https://${base.hostname}/favicon.ico`;
 
-    return NextResponse.json({ title, description, ogImage, favicon });
+    return NextResponse.json({ title, description, ogImage: toHttps(ogImage), favicon });
   } catch {
     return NextResponse.json({});
   }
