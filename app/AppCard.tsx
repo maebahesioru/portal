@@ -59,7 +59,7 @@ export default function AppCard({ name, fqdn, staticDescription }: { name: strin
           {meta?.favicon && (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={meta.favicon}
+              src={`/api/img?url=${encodeURIComponent(meta.favicon)}`}
               alt=""
               width={16}
               height={16}
