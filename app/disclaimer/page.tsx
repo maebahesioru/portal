@@ -12,7 +12,7 @@ export default function DisclaimerPage() {
           </section>
           <section>
             <h2 className="text-base font-semibold text-white mb-2">損害について</h2>
-            <p>本サイトおよびリンク先のサービスの利用によって生じたいかなる損害についても、運営者は一切の責任を負いません。利用は自己責任でお願いします。</p>
+            <p>本サイトおよび掲載サービスの障害・不具合・データ損失等によって生じたいかなる損害についても、運営者は一切の責任を負いません。個人が趣味で開発・運営しているサービスであることをご理解の上ご利用ください。</p>
           </section>
           <section>
             <h2 className="text-base font-semibold text-white mb-2">外部リンクについて</h2>
