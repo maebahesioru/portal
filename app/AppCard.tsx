@@ -56,7 +56,8 @@ export default function AppCard({ name, fqdn, staticDescription }: { name: strin
       <div className="p-4 flex flex-col gap-1.5">
         <div className="flex items-center gap-2">
           {meta?.favicon && (
-            <Image
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
               src={meta.favicon}
               alt=""
               width={16}
