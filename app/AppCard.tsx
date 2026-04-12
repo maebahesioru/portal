@@ -56,12 +56,14 @@ export default function AppCard({ name, fqdn, staticDescription }: { name: strin
       <div className="p-4 flex flex-col gap-1.5">
         <div className="flex items-center gap-2">
           {meta?.favicon && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               src={meta.favicon}
               alt=""
-              className="w-4 h-4 shrink-0 rounded-sm"
+              width={16}
+              height={16}
+              className="shrink-0 rounded-sm"
               onError={(e) => (e.currentTarget.style.display = "none")}
+              unoptimized={false}
             />
           )}
           <span className="font-semibold text-sm text-white/90 truncate">
