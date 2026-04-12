@@ -20,7 +20,7 @@ export default function DisclaimerPage() {
           </section>
           <section>
             <h2 className="text-base font-semibold text-white mb-2">著作権について</h2>
-            <p>本サイトのコンテンツの著作権は運営者に帰属します。無断転載・複製はお断りします。</p>
+            <p>本サイトのソースコードは<a href="https://github.com/maebahesioru" target="_blank" rel="noopener noreferrer" className="text-violet-400 hover:text-violet-300 underline underline-offset-2">GitHub</a>で公開しており、フォーク・Star・プルリクエスト大歓迎です。コンテンツ（文章・画像等）の無断転載はお断りします。</p>
           </section>
         </div>
       </div>
