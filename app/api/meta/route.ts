@@ -29,6 +29,7 @@ export async function GET(req: NextRequest) {
       getMeta("name", "description");
 
     const ogImageRaw = getMeta("property", "og:image");
+    const base = new URL(url);
     const toHttps = (u: string | null) => u ? u.replace(/^http:\/\//i, "https://") : null;
     const toAbsolute = (u: string | null) => u
       ? (u.startsWith("http") ? u : `${base.origin}${u.startsWith("/") ? "" : "/"}${u}`)
@@ -44,7 +45,8 @@ export async function GET(req: NextRequest) {
     const ogImage = toAbsolute(ogImageRaw);
 
     return NextResponse.json({ title, description, ogImage: toHttps(ogImage), favicon: toHttps(favicon) });
-  } catch {
+  } catch (e) {
+    console.error("meta fetch error:", url, e);
     return NextResponse.json({});
   }
 }

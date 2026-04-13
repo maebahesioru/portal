@@ -19,7 +19,7 @@ export default function AppCard({ name, fqdn, staticDescription }: { name: strin
   useEffect(() => {
     fetch(`/api/meta?url=${encodeURIComponent(fqdn)}`)
       .then((r) => r.json())
-      .then((d) => { setMeta(d); setLoading(false); })
+      .then((d) => { console.log(fqdn, d); setMeta(d); setLoading(false); })
       .catch(() => { setMeta({} as Meta); setLoading(false); });
   }, [fqdn]);
 
