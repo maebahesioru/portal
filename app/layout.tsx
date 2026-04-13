@@ -55,7 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <link rel="preconnect" href="https://fundingchoicesmessages.google.com" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9868361167191737" crossOrigin="anonymous" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9868361167191737" crossOrigin="anonymous"></script>
         {/* InMobi Choice CMP for TCF 2.3 */}
         <script dangerouslySetInnerHTML={{ __html: `(function() {
   var host = "www.themoneytizer.com";
