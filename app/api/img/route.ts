@@ -11,6 +11,18 @@ export async function GET(req: NextRequest) {
     if (!res.ok) return new NextResponse(null, { status: 404 });
 
     const buf = Buffer.from(await res.arrayBuffer());
+
+    // ICOはsharpが不安定なのでそのまま返す
+    const isIco = url.toLowerCase().includes(".ico");
+    if (isIco) {
+      return new NextResponse(buf as unknown as BodyInit, {
+        headers: {
+          "Content-Type": "image/x-icon",
+          "Cache-Control": "public, max-age=86400",
+        },
+      });
+    }
+
     const webp = await sharp(buf)
       .resize(w, null, { withoutEnlargement: true })
       .webp({ quality: 80 })
