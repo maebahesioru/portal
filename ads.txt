@@ -1,4 +1,3 @@
-google.com, pub-9868361167191737, DIRECT, f08c47fec0942fa0
 OWNERDOMAIN=f5.si
 MANAGERDOMAIN=themoneytizer.com
 themoneytizer.com,130672,DIRECT
