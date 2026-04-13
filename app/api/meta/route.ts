@@ -28,10 +28,11 @@ export async function GET(req: NextRequest) {
       getMeta("property", "og:description") ??
       getMeta("name", "description");
 
-    const ogImage = getMeta("property", "og:image");
-
-    const base = new URL(url);
+    const ogImageRaw = getMeta("property", "og:image");
     const toHttps = (u: string | null) => u ? u.replace(/^http:\/\//i, "https://") : null;
+    const toAbsolute = (u: string | null) => u
+      ? (u.startsWith("http") ? u : `${base.origin}${u.startsWith("/") ? "" : "/"}${u}`)
+      : null;
 
     // <link rel="icon"> or <link rel="shortcut icon"> を優先、なければ /favicon.ico
     const faviconPath =
@@ -39,10 +40,8 @@ export async function GET(req: NextRequest) {
       html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["'][^"']*icon[^"']*["']/i)?.[1] ??
       "/favicon.ico";
 
-    const faviconClean = faviconPath.split("?")[0]; // クエリパラメータを除去
-    const favicon = faviconClean.startsWith("http")
-      ? faviconClean
-      : `${base.origin}${faviconClean.startsWith("/") ? "" : "/"}${faviconClean}`;
+    const favicon = toAbsolute(faviconPath.split("?")[0]);
+    const ogImage = toAbsolute(ogImageRaw);
 
     return NextResponse.json({ title, description, ogImage: toHttps(ogImage), favicon: toHttps(favicon) });
   } catch {
