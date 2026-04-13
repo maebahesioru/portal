@@ -45,8 +45,7 @@ export async function GET(req: NextRequest) {
     const ogImage = toAbsolute(ogImageRaw);
 
     return NextResponse.json({ title, description, ogImage: toHttps(ogImage), favicon: toHttps(favicon) });
-  } catch (e) {
-    console.error("meta fetch error:", url, e);
+  } catch {
     return NextResponse.json({});
   }
 }
