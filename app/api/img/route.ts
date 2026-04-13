@@ -12,28 +12,29 @@ export async function GET(req: NextRequest) {
 
     const buf = Buffer.from(await res.arrayBuffer());
 
-    // ICOはsharpが不安定なのでそのまま返す
-    const isIco = url.toLowerCase().includes(".ico");
-    if (isIco) {
+    // ICO/SVGはsharpが不安定なのでそのまま返す
+    const ext = url.toLowerCase().split("?")[0].split(".").pop() ?? "";
+    if (["ico", "svg"].includes(ext)) {
+      const ct = ext === "svg" ? "image/svg+xml" : "image/x-icon";
       return new NextResponse(buf as unknown as BodyInit, {
-        headers: {
-          "Content-Type": "image/x-icon",
-          "Cache-Control": "public, max-age=86400",
-        },
+        headers: { "Content-Type": ct, "Cache-Control": "public, max-age=86400" },
       });
     }
 
-    const webp = await sharp(buf)
-      .resize(w, null, { withoutEnlargement: true })
-      .webp({ quality: 80 })
-      .toBuffer();
-
-    return new NextResponse(webp as unknown as BodyInit, {
-      headers: {
-        "Content-Type": "image/webp",
-        "Cache-Control": "public, max-age=86400",
-      },
-    });
+    try {
+      const webp = await sharp(buf)
+        .resize(w, null, { withoutEnlargement: true })
+        .webp({ quality: 80 })
+        .toBuffer();
+      return new NextResponse(webp as unknown as BodyInit, {
+        headers: { "Content-Type": "image/webp", "Cache-Control": "public, max-age=86400" },
+      });
+    } catch {
+      // sharpが失敗したらそのまま返す
+      return new NextResponse(buf as unknown as BodyInit, {
+        headers: { "Cache-Control": "public, max-age=86400" },
+      });
+    }
   } catch {
     return new NextResponse(null, { status: 500 });
   }
