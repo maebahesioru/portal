@@ -1,7 +1,4 @@
 google.com, pub-9868361167191737, DIRECT, f08c47fec0942fa0
-OWNERDOMAIN=f5.si
-MANAGERDOMAIN=themoneytizer.com
-themoneytizer.com,130672,DIRECT
 smartadserver.com, 1097, RESELLER
 pubmatic.com, 156439, RESELLER, 5d62403b186f2ace
 pubmatic.com, 154037, RESELLER, 5d62403b186f2ace
