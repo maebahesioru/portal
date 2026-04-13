@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    root: "C:\\Users\\maeba\\Desktop\\portal",
-  },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
