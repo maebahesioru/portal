@@ -20,7 +20,7 @@ async function getApps(): Promise<CoolifyApp[]> {
     s.applications.filter((a) => a.fqdn).map((a) => ({ name: a.name, fqdn: a.fqdn }))
   );
 
-const EXCLUDED = ["discord-auth-bot", "discordauth", "ヒカマーポータルサイト"];
+const EXCLUDED = ["discord-auth-bot", "discordauth"];
 
   return [...apps, ...serviceApps].filter((a) => a.fqdn && !EXCLUDED.includes(a.name));
 }
