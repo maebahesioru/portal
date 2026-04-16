@@ -71,7 +71,7 @@ export default function AppCard({ name, fqdn, staticDescription }: { name: strin
             {loading ? (
               <span className="inline-block w-24 h-3.5 rounded bg-white/10 animate-pulse" />
             ) : (
-              meta?.title ?? name
+              (meta?.title ?? name).replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">")
             )}
           </span>
         </div>
