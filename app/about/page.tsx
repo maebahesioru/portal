@@ -15,7 +15,7 @@ export default function AboutPage() {
               <p>hikamer（maebahesioru）が個人で開発・運営しています。</p>
               <div className="flex gap-4 mt-1">
                 <a href="https://x.com/maebahesioru2" target="_blank" rel="noopener noreferrer" className="text-violet-400 hover:text-violet-300 transition-colors">X (@maebahesioru2)</a>
-                <a href="https://discord.com/invite/DqcnU7mEau" target="_blank" rel="noopener noreferrer" className="text-violet-400 hover:text-violet-300 transition-colors">Discord サーバー</a>
+                <a href="https://discord.com/invite/26U6r5xMBx" target="_blank" rel="noopener noreferrer" className="text-violet-400 hover:text-violet-300 transition-colors">Discord サーバー</a>
               </div>
             </div>
           </section>

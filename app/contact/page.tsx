@@ -6,7 +6,7 @@ export default function ContactPage() {
         <h1 className="text-3xl font-bold text-white mb-8">お問い合わせ</h1>
         <div className="flex flex-col gap-4">
           <a
-            href="https://discord.com/invite/DqcnU7mEau"
+            href="https://discord.com/invite/26U6r5xMBx"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-5 rounded-2xl border border-white/8 bg-white/3 hover:bg-indigo-500/10 hover:border-indigo-500/30 transition-all"
@@ -17,7 +17,7 @@ export default function ContactPage() {
                 Discord サーバー
                 <span className="text-xs bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-full px-2 py-0.5">反応早め</span>
               </div>
-              <div className="text-sm text-gray-400 mt-0.5">discord.com/invite/DqcnU7mEau</div>
+              <div className="text-sm text-gray-400 mt-0.5">discord.com/invite/26U6r5xMBx</div>
             </div>
           </a>
           <a
