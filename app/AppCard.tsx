@@ -11,7 +11,12 @@ type Meta = {
   favicon: string | null;
 };
 
+function stripPort(url: string) {
+  try { const u = new URL(url); u.port = ""; return u.toString(); } catch { return url; }
+}
+
 export default function AppCard({ name, fqdn, staticDescription }: { name: string; fqdn: string; staticDescription?: string }) {
+  fqdn = stripPort(fqdn);
   const [meta, setMeta] = useState<Meta | null>(null);
   const [imgError, setImgError] = useState(false);
   const [loading, setLoading] = useState(true);
