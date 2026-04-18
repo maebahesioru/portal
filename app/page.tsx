@@ -1,5 +1,6 @@
 import AppGrid from "./AppGrid";
 import Footer from "./Footer";
+import HikamaniClock from "./HikamaniClock";
 
 type CoolifyApp = { name: string; fqdn: string | null };
 
@@ -87,6 +88,26 @@ export default async function Home() {
           >
             詳しくはヒカマーズWikiへ →
           </a>
+        </div>
+        </div>
+
+        {/* ヒカマニ暦 */}
+        <div className="max-w-6xl mx-auto px-6 pb-10">
+        <div className="rounded-2xl border border-white/8 bg-white/3 p-8">
+          <h2 className="text-xl font-bold text-white mb-4">ヒカマニ暦</h2>
+          <div className="text-gray-400 leading-relaxed space-y-3 text-sm">
+            <p>
+              <span className="text-white font-medium">ヒカマニ暦</span>とは、ヒカマニ（ヒカキン）が動画投稿を開始した<span className="text-white font-medium">2017年を元年</span>とする独自の暦。西暦・仏暦・皇暦・和暦に代わる新たな時間軸として提唱されている。
+            </p>
+            <p>
+              ヒカマニ暦以前の年代は <span className="text-white font-medium">B.H.（Before Hikamani）</span> で表記する。例：ヒカキン誕生は B.H.28（西暦1989年）、セイキン誕生は B.H.30（西暦1987年）。
+            </p>
+            <p>
+              ヒカマーは<span className="text-white font-medium">ヒカマニ暦3年（西暦2019年・令和元年）</span>に誕生した。令和の幕開けと同年であり、ヒカマー紀元年とも呼ばれる。
+            </p>
+            <p className="text-xs text-gray-500">元日：1月28日　／　光誕祭：4月21日（ヒカキン誕生日）　／　凍結の日：5月11日　／　聖誕祭：7月30日（セイキン誕生日）　／　野獣の日：8月10日</p>
+          </div>
+          <HikamaniClock />
         </div>
         </div>
       </main>
