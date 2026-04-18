@@ -105,7 +105,18 @@ export default async function Home() {
             <p>
               ヒカマーは<span className="text-white font-medium">ヒカマニ暦3年（西暦2019年・令和元年）</span>に誕生した。令和の幕開けと同年であり、ヒカマー紀元年とも呼ばれる。
             </p>
-            <p className="text-xs text-gray-500">元日：1月28日　／　光誕祭：4月21日（ヒカキン誕生日）　／　凍結の日：5月11日　／　聖誕祭：7月30日（セイキン誕生日）　／　野獣の日：8月10日</p>
+            <div className="space-y-2 text-xs text-gray-500 border-t border-white/8 pt-3 mt-1">
+              <p><span className="text-gray-400">元日（1月28日）</span>：マニアさんの初投稿日</p>
+              <p><span className="text-gray-400">放射能マニアの日（2月10日）</span>：ヒカキンが放射能マニアと自称した日</p>
+              <p><span className="text-gray-400">ヒカマーサーフィンの日（3月11日）</span>：ネオナチホシノが東日本大震災の津波でサーフィンをするという不謹慎ネタツイをしたのが元ネタ</p>
+              <p><span className="text-gray-400">光誕祭（4月21日）</span>：ヒカキンの誕生日</p>
+              <p><span className="text-gray-400">凍結の日（5月11日）</span>：2025年に起こったヒカマー一斉凍結が元ネタ</p>
+              <p><span className="text-gray-400">聖誕祭（7月30日）</span>：セイキンの誕生日</p>
+              <p><span className="text-gray-400">野獣の日（8月10日）</span>：野獣＝やじゅう＝810</p>
+              <p><span className="text-gray-400">ヒカマー記念日（10月26日）</span>：頬を赤らめるメスイキが「ホモと見る淫夢に代わる大人気覇権コンテンツ『hikakin_mania』」を投稿した日。現時点で確認できる最古のヒカマー関連資料であり、ヒカマーの起点と位置付けられている。</p>
+              <p><span className="text-gray-400">ヒカニチ記念日（11月9日）</span>：2022年、TikTokで活動するヒカマー（@hikashin_mania氏）が区別を付けようと思いヒカニチと名付けた日。その後ヒカニチ動画はYouTubeにも進出し、ヒカマニ界隈に広く認知されていった。</p>
+              <p><span className="text-gray-400">日魚終日（12月3日）</span>：ヒカキンが「日本産の魚介類は終わってます」と発言した日</p>
+            </div>
           </div>
           <HikamaniClock />
         </div>
