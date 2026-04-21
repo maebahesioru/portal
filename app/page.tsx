@@ -1,8 +1,10 @@
 import AppGrid from "./AppGrid";
 import Footer from "./Footer";
 import HikamaniClock from "./HikamaniClock";
+import Image from "next/image";
 
 type CoolifyApp = { name: string; fqdn: string | null };
+type Sponsor = { userId: string; displayName: string; avatar: string | null; slug: string; big: boolean; expiresAt: string | null };
 
 async function getApps(): Promise<CoolifyApp[]> {
   const headers = { Authorization: `Bearer ${process.env.COOLIFY_TOKEN}` };
@@ -26,8 +28,23 @@ const EXCLUDED = ["discord-auth-bot", "discordauth"];
   return [...apps, ...serviceApps].filter((a) => a.fqdn && !EXCLUDED.includes(a.name));
 }
 
+async function getSponsors(): Promise<Sponsor[]> {
+  try {
+    const res = await fetch(
+      `${process.env.HKM_API_URL || "https://hikakinmaniacoin.hikamer.f5.si"}/api/sponsors`,
+      { next: { revalidate: 60 } }
+    );
+    if (!res.ok) return [];
+    return res.json();
+  } catch {
+    return [];
+  }
+}
+
 export default async function Home() {
-  const apps = await getApps();
+  const [apps, sponsors] = await Promise.all([getApps(), getSponsors()]);
+  const bigSponsors = sponsors.filter((s) => s.big);
+  const normalSponsors = sponsors.filter((s) => !s.big);
 
   return (
     <div className="min-h-screen" style={{ background: "var(--background)" }}>
@@ -64,6 +81,39 @@ export default async function Home() {
       {/* Grid */}
       <main>
         <AppGrid apps={apps.map((a) => ({ name: a.name, fqdn: a.fqdn! }))} />
+
+        {/* Sponsors */}
+        {sponsors.length > 0 && (
+          <div className="max-w-6xl mx-auto px-6 pb-10">
+            <div className="rounded-2xl border border-yellow-500/20 bg-yellow-500/5 p-8">
+              <div className="flex items-center gap-2 mb-6">
+                <h2 className="text-xl font-bold text-yellow-400">スポンサー</h2>
+                <a href="https://hikakinmaniacoin.hikamer.f5.si/shop" target="_blank" rel="noopener noreferrer" className="text-xs text-yellow-600 hover:text-yellow-400 ml-auto">HKMで掲載する →</a>
+              </div>
+              {bigSponsors.length > 0 && (
+                <div className="flex flex-wrap gap-4 mb-6">
+                  {bigSponsors.map((s) => (
+                    <div key={s.userId} className="flex items-center gap-3 bg-yellow-500/10 border border-yellow-500/30 rounded-xl px-5 py-3">
+                      {s.avatar && <Image src={s.avatar} alt={s.displayName} width={48} height={48} className="rounded-full" />}
+                      <span className="text-lg font-bold text-yellow-300">{s.displayName}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {normalSponsors.length > 0 && (
+                <div className="flex flex-wrap gap-3">
+                  {normalSponsors.map((s) => (
+                    <div key={s.userId} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2">
+                      {s.avatar && <Image src={s.avatar} alt={s.displayName} width={28} height={28} className="rounded-full" />}
+                      <span className="text-sm text-gray-300">{s.displayName}</span>
+                      {s.expiresAt && <span className="text-xs text-gray-500">{new Date(s.expiresAt).toLocaleDateString("ja-JP")}まで</span>}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* About */}
         <div className="max-w-6xl mx-auto px-6 pb-10">
