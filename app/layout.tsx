@@ -11,6 +11,7 @@ const SITE_URL = "https://hikamer.f5.si";
 const SITE_NAME = "hikamer's portal";
 const DESCRIPTION = "ヒカマー界隈のWebサービス・ツール・ゲーム集ポータルサイト。SearXNG、UNO、ヒカマーズライブラリなど多数のサービスを公開中。";
 
+// rebuild trigger
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
