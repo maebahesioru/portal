@@ -121,10 +121,10 @@ export default async function Home() {
           <h2 className="text-xl font-bold text-white mb-4">ヒカマーとは？</h2>
           <div className="text-gray-400 leading-relaxed space-y-3 text-sm">
             <p>
-              <span className="text-white font-medium">ヒカマー</span>とは、ヒカキン（ヒカマニ）と淫夢を組み合わせたコンテンツ（ヒカ淫）を好む人々、およびX上に形成されたその界隈のこと。名前の由来は「ヒカキン＋インマー」で、名付け親はうきうさとされている。
+              <span className="text-white font-medium">ヒカマー</span>とは、ヒカキン（ヒカマニ）と特定のネットミームを組み合わせたコンテンツ（界隈独自の動画文化）を好む人々、およびX上に形成されたその界隈のこと。名前の由来は「ヒカキン＋インマー」で、名付け親はうきうさとされている。
             </p>
             <p>
-              ヒカマー界隈はヒカ淫容認派が多く、ヒカマニ・淫夢文化にとどまらず政治的発言も目立つ独自のコミュニティ。垢名に「〇〇_mania」を付けたり、ヒカマー語録・独自ハッシュタグ文化（ヒカマーズアルカイダ、ヒカマーズ情報開示など）を持つ。
+              ヒカマー界隈は界隈独自の動画文化を容認する派が多く、ヒカマニ・ミーム文化にとどまらず政治的発言も目立つ独自のコミュニティ。垢名に「〇〇_mania」を付けたり、ヒカマー語録・独自ハッシュタグ文化（ヒカマーズアルカイダ、ヒカマーズ情報開示など）を持つ。
             </p>
             <p>
               一方、音MAD界隈では荒らし行為や不謹慎ネタへの反発から禁忌の存在として扱われることも多い。
@@ -162,8 +162,8 @@ export default async function Home() {
               <p><span className="text-gray-400">光誕祭（4月21日）</span>：ヒカキンの誕生日</p>
               <p><span className="text-gray-400">凍結の日（5月11日）</span>：2025年に起こったヒカマー一斉凍結が元ネタ</p>
               <p><span className="text-gray-400">聖誕祭（7月30日）</span>：セイキンの誕生日</p>
-              <p><span className="text-gray-400">野獣の日（8月10日）</span>：野獣＝やじゅう＝810</p>
-              <p><span className="text-gray-400">ヒカマー記念日（10月26日）</span>：頬を赤らめるメスイキが「ホモと見る淫夢に代わる大人気覇権コンテンツ『hikakin_mania』」を投稿した日。現時点で確認できる最古のヒカマー関連資料であり、ヒカマーの起点と位置付けられている。</p>
+              <p><span className="text-gray-400">夏の記念日（8月10日）</span>：やじゅう＝810</p>
+              <p><span className="text-gray-400">ヒカマー記念日（10月26日）</span>：界隈の有名投稿者が「ホモと見るミームに代わる大人気覇権コンテンツ『hikakin_mania』」を投稿した日。現時点で確認できる最古のヒカマー関連資料であり、ヒカマーの起点と位置付けられている。</p>
               <p><span className="text-gray-400">ヒカニチ記念日（11月9日）</span>：2022年、TikTokで活動するヒカマー（@hikashin_mania氏）が区別を付けようと思いヒカニチと名付けた日。その後ヒカニチ動画はYouTubeにも進出し、ヒカマニ界隈に広く認知されていった。</p>
               <p><span className="text-gray-400">日魚終日（12月3日）</span>：ヒカキンが「日本産の魚介類は終わってます」と発言した日</p>
             </div>

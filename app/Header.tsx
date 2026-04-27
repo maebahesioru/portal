@@ -15,6 +15,7 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="hidden sm:flex items-center gap-6 text-sm text-gray-400">
           <a href="/" className="hover:text-white transition-colors">ホーム</a>
+          <a href="/blog" className="hover:text-white transition-colors">ブログ</a>
           <a href="/about" className="hover:text-white transition-colors">About</a>
           <a href="/contact" className="hover:text-white transition-colors">お問い合わせ</a>
         </nav>
@@ -37,14 +38,15 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <nav className="sm:hidden border-t border-white/5 bg-black/50 backdrop-blur-md px-4 py-3 flex flex-col gap-3 text-sm text-gray-400">
-          <a href="/" className="hover:text-white transition-colors py-1" onClick={() => setOpen(false)}>ホーム</a>
-          <a href="/about" className="hover:text-white transition-colors py-1" onClick={() => setOpen(false)}>About</a>
-          <a href="/contact" className="hover:text-white transition-colors py-1" onClick={() => setOpen(false)}>お問い合わせ</a>
-        </nav>
-      )}
+        {/* Mobile menu */}
+        {open && (
+          <nav className="sm:hidden border-t border-white/5 bg-black/50 backdrop-blur-md px-4 py-3 flex flex-col gap-3 text-sm text-gray-400">
+            <a href="/" className="hover:text-white transition-colors py-1" onClick={() => setOpen(false)}>ホーム</a>
+            <a href="/blog" className="hover:text-white transition-colors py-1" onClick={() => setOpen(false)}>ブログ</a>
+            <a href="/about" className="hover:text-white transition-colors py-1" onClick={() => setOpen(false)}>About</a>
+            <a href="/contact" className="hover:text-white transition-colors py-1" onClick={() => setOpen(false)}>お問い合わせ</a>
+          </nav>
+        )}
     </header>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import PlaceholderImage from "./PlaceholderImage";
 
 type Meta = {
@@ -15,7 +16,16 @@ function stripPort(url: string) {
   try { const u = new URL(url); u.port = ""; return u.toString(); } catch { return url; }
 }
 
-export default function AppCard({ name, fqdn, staticDescription }: { name: string; fqdn: string; staticDescription?: string }) {
+function decodeHtml(str: string) {
+  return str
+    .replace(/&#x27;/g, "'")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
+
+export default function AppCard({ slug, name, fqdn, staticDescription }: { slug: string; name: string; fqdn: string; staticDescription?: string }) {
   fqdn = stripPort(fqdn);
   const [meta, setMeta] = useState<Meta | null>(null);
   const [imgError, setImgError] = useState(false);
@@ -31,10 +41,8 @@ export default function AppCard({ name, fqdn, staticDescription }: { name: strin
   const showOgImage = meta?.ogImage && !imgError;
 
   return (
-    <a
-      href={fqdn}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={`/apps/${slug}`}
       className="group flex flex-col rounded-2xl overflow-hidden border border-white/8 bg-white/3 hover:bg-white/6 hover:border-white/15 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/40"
     >
       {/* Thumbnail */}
@@ -76,18 +84,18 @@ export default function AppCard({ name, fqdn, staticDescription }: { name: strin
             {loading ? (
               <span className="inline-block w-24 h-3.5 rounded bg-white/10 animate-pulse" />
             ) : (
-              (meta?.title ?? name).replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+              decodeHtml(meta?.title ?? name)
             )}
           </span>
         </div>
         {!loading && (meta?.description || staticDescription) && (
-          <p className="text-xs text-gray-400 line-clamp-2 leading-relaxed">{meta?.description ?? staticDescription}</p>
+          <p className="text-xs text-gray-400 line-clamp-2 leading-relaxed">{decodeHtml(meta?.description ?? staticDescription ?? "")}</p>
         )}
         {loading && (
           <span className="inline-block w-full h-3 rounded bg-white/5 animate-pulse" />
         )}
         <span className="text-xs text-gray-400 truncate mt-0.5">{(() => { try { const u = new URL(fqdn); return u.hostname + u.pathname.replace(/\/$/, ""); } catch { return fqdn; } })()}</span>
       </div>
-    </a>
+    </Link>
   );
 }

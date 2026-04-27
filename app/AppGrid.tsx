@@ -2,17 +2,31 @@
 
 import { useState } from "react";
 import AppCard from "./AppCard";
-import descriptions from "./app-descriptions";
+import { getAppMetaByName } from "./app-descriptions";
+
+function slugFromFqdn(fqdn: string): string | null {
+  try {
+    const u = new URL(fqdn);
+    // e.g. hikamerautowiki.hikamer.f5.si:3000 -> hikamerautowiki
+    const host = u.hostname.split(".")[0];
+    return host || null;
+  } catch {
+    return null;
+  }
+}
 
 type App = { name: string; fqdn: string };
 
 export default function AppGrid({ apps }: { apps: App[] }) {
   const [query, setQuery] = useState("");
-  const filtered = apps.filter(
-    (a) =>
+  const filtered = apps.filter((a) => {
+    const meta = getAppMetaByName(a.name);
+    return (
       a.name.toLowerCase().includes(query.toLowerCase()) ||
-      (descriptions[a.name] ?? "").toLowerCase().includes(query.toLowerCase())
-  );
+      (meta?.shortDescription ?? "").toLowerCase().includes(query.toLowerCase()) ||
+      (meta?.tags ?? []).some((t) => t.toLowerCase().includes(query.toLowerCase()))
+    );
+  });
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
@@ -34,9 +48,19 @@ export default function AppGrid({ apps }: { apps: App[] }) {
         <p className="text-gray-500 text-sm py-10 text-center">「{query}」に一致するサービスが見つかりませんでした</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {filtered.map((app) => (
-            <AppCard key={app.name} name={app.name} fqdn={app.fqdn} staticDescription={descriptions[app.name]} />
-          ))}
+          {filtered.map((app) => {
+            const meta = getAppMetaByName(app.name);
+            const slug = meta?.slug ?? slugFromFqdn(app.fqdn) ?? app.name;
+            return (
+              <AppCard
+                key={app.name}
+                slug={slug}
+                name={app.name}
+                fqdn={app.fqdn}
+                staticDescription={meta?.shortDescription}
+              />
+            );
+          })}
         </div>
       )}
     </div>

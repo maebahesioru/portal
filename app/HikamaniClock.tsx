@@ -25,7 +25,7 @@ const HOLIDAYS: { label: string; month: number; day: number; color: string }[] =
   { label: "光誕祭（ヒカキン誕生日）", month: 4, day: 21, color: "text-yellow-400" },
   { label: "凍結の日",           month: 5,  day: 11, color: "text-blue-400"   },
   { label: "聖誕祭（セイキン誕生日）", month: 7, day: 30, color: "text-green-400"  },
-  { label: "野獣の日",           month: 8,  day: 10, color: "text-orange-400" },
+  { label: "夏の記念日（8月10日）", month: 8, day: 10, color: "text-orange-400" },
   { label: "ヒカマー記念日",     month: 10, day: 26, color: "text-pink-400"   },
   { label: "ヒカニチ記念日",     month: 11, day:  9, color: "text-rose-400"   },
   { label: "日魚終日",           month: 12, day:  3, color: "text-cyan-400"   },

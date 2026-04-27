@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: DESCRIPTION,
-  keywords: ["ヒカマー", "ヒカマニ", "ヒカ淫", "hikamer", "ポータル", "Webサービス", "ツール", "ゲーム", "SearXNG", "UNO"],
+  keywords: ["ヒカマー", "ヒカマニ", "hikamer", "ポータル", "Webサービス", "ツール", "ゲーム", "SearXNG", "UNO"],
   authors: [{ name: "hikamer", url: "https://x.com/maebahesioru2" }],
   creator: "hikamer",
   publisher: "hikamer",
