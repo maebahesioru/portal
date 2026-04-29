@@ -31,12 +31,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const app = getAppMeta(slug);
   if (!app) return {};
+  const meta = await fetchMeta(app.fqdn);
+  const title = meta?.title ?? app.name;
   return {
-    title: `${app.name} - hikamer's portal`,
-    description: app.shortDescription,
+    title: `${title} - hikamer's portal`,
+    description: meta?.description ?? app.shortDescription,
     openGraph: {
-      title: `${app.name} - hikamer's portal`,
-      description: app.shortDescription,
+      title: `${title} - hikamer's portal`,
+      description: meta?.description ?? app.shortDescription,
       url: `https://hikamer.f5.si/apps/${app.slug}`,
       siteName: "hikamer's portal",
       type: "article",
