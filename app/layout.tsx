@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 const SITE_URL = "https://hikamer.f5.si";
 const SITE_NAME = "hikamer's portal";
-const DESCRIPTION = "ヒカマー界隈のWebサービス・ツール・ゲーム集ポータルサイト。SearXNG、UNO、ヒカマーズライブラリなど多数のサービスを公開中。";
+const DESCRIPTION = "個人開発者十字架_maniaが開発・運営するWebサービス・ツール・ゲームのポータルサイト。Next.js、TypeScript、Coolifyを使った開発ノウハウや運用事例を発信しています。";
 
 // rebuild trigger
 export const metadata: Metadata = {

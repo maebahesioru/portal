@@ -78,7 +78,7 @@ export default async function Home() {
           <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-3">
             hikamer&apos;s portal
           </h1>
-          <p className="text-gray-400 text-lg">Webサービス・ツール・ゲーム集</p>
+          <p className="text-gray-400 text-lg">個人開発Webサービス・ツール・ゲーム集</p>
         </div>
       </div>
 

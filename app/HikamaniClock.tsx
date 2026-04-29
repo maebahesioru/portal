@@ -21,9 +21,9 @@ function toHikamani(d: Date) {
 const HOLIDAYS: { label: string; month: number; day: number; color: string }[] = [
   { label: "元日",               month: 1,  day: 28, color: "text-violet-400" },
   { label: "元素マニアの日",   month: 2,  day: 10, color: "text-lime-400"   },
-  { label: "ヒカマーサーフィンの日", month: 3, day: 11, color: "text-sky-400" },
+  { label: "3月の記念日", month: 3, day: 11, color: "text-sky-400" },
   { label: "光誕祭（ヒカキン誕生日）", month: 4, day: 21, color: "text-yellow-400" },
-  { label: "凍結の日",           month: 5,  day: 11, color: "text-blue-400"   },
+  { label: "5月の記念日",           month: 5,  day: 11, color: "text-blue-400"   },
   { label: "聖誕祭（セイキン誕生日）", month: 7, day: 30, color: "text-green-400"  },
   { label: "夏の記念日（8月10日）", month: 8, day: 10, color: "text-orange-400" },
   { label: "ヒカマー記念日",     month: 10, day: 26, color: "text-pink-400"   },

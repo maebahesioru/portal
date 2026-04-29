@@ -58,7 +58,7 @@ export default function OgImage() {
           }}
         >
           <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#34d399" }} />
-          <span style={{ color: "#9ca3af", fontSize: 18 }}>Webサービス・ツール・ゲーム集</span>
+          <span style={{ color: "#9ca3af", fontSize: 18 }}>個人開発Webサービス・ツール集</span>
         </div>
         {/* Title */}
         <div
@@ -74,7 +74,7 @@ export default function OgImage() {
         </div>
         {/* Description */}
         <div style={{ fontSize: 28, color: "#6b7280" }}>
-          ヒカマー界隈のWebサービスをまとめたポータルサイト
+           個人開発Webサービスをまとめたポータルサイト
         </div>
       </div>
     ),
