@@ -1,7 +1,7 @@
-export default function PlaceholderImage({ name }: { name: string }) {
+export default function PlaceholderImage({ name, displayName }: { name: string; displayName?: string }) {
   const hue = [...name].reduce((acc, c) => acc + c.charCodeAt(0), 0) % 360;
   const hue2 = (hue + 60) % 360;
-  const initials = name.slice(0, 2).toUpperCase();
+  const initials = (displayName ?? name).slice(0, 2).toUpperCase();
 
   return (
     <div
@@ -30,7 +30,7 @@ export default function PlaceholderImage({ name }: { name: string }) {
         >
           {initials}
         </span>
-        <span className="text-xs text-white/40 tracking-widest uppercase">{name}</span>
+        <span className="text-xs text-white/40 tracking-widest uppercase">{displayName ?? name}</span>
       </div>
     </div>
   );

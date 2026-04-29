@@ -4,13 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import PlaceholderImage from "../../PlaceholderImage";
 
-export default function OgpImage({ src, name }: { src: string; name: string }) {
+export default function OgpImage({ src, name, displayName }: { src: string; name: string; displayName?: string }) {
   const [error, setError] = useState(false);
 
   if (error) {
     return (
       <div className="w-full h-56 sm:h-80 rounded-2xl overflow-hidden mb-8 border border-white/8">
-        <PlaceholderImage name={name} />
+        <PlaceholderImage name={name} displayName={displayName} />
       </div>
     );
   }
