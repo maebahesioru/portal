@@ -93,7 +93,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
         <nav className="text-sm text-gray-500 mb-6">
           <Link href="/" className="hover:text-white transition-colors">ホーム</Link>
           <span className="mx-2">/</span>
-          <span className="text-white">{app.name}</span>
+          <span className="text-white">{meta?.title ?? app.name}</span>
         </nav>
 
         {/* OGP Image */}
