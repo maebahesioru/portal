@@ -5,7 +5,7 @@ export default function PlaceholderImage({ name }: { name: string }) {
 
   return (
     <div
-      className="w-full h-40 relative overflow-hidden flex items-center justify-center select-none"
+      className="w-full h-full relative overflow-hidden flex items-center justify-center select-none"
       style={{ background: `linear-gradient(135deg, hsl(${hue},60%,15%) 0%, hsl(${hue2},60%,10%) 100%)` }}
     >
       {/* Grid pattern */}
