@@ -8,7 +8,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 backdrop-blur-md bg-black/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-        <a href="/" className="font-bold text-white hover:text-gray-300 transition-colors">
+        <a href="/" className="font-bold text-white hover:text-gray-300 transition-colors flex items-center gap-2">
+          <img src="/icon" alt="" width={20} height={20} className="rounded-sm" />
           hikamer&apos;s portal
         </a>
 
