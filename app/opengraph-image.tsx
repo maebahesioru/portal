@@ -73,9 +73,7 @@ export default function OgImage() {
           hikamer&apos;s portal
         </div>
         {/* Description */}
-        <div style={{ fontSize: 28, color: "#6b7280" }}>
-           個人開発Webサービスをまとめたポータルサイト
-        </div>
+        <div style={{ fontSize: 28, color: "#6b7280" }}>個人開発Webサービスをまとめたポータルサイト</div>
       </div>
     ),
     size

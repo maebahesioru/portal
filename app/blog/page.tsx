@@ -4,10 +4,10 @@ import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "ブログ - hikamer's portal",
-  description: "hikamer's portalの運営者によるブログ。界隈の歴史、開発ノウハウ、コミュニティ運営の心得などを発信しています。",
+  description: "hikamer's portalの運営者によるブログ。Web開発、個人開発サービスの運用、コミュニティ管理、Next.jsやCoolifyの実践ノウハウを発信しています。",
   openGraph: {
     title: "ブログ - hikamer's portal",
-    description: "hikamer's portalの運営者によるブログ。界隈の歴史、開発ノウハウ、コミュニティ運営の心得などを発信しています。",
+    description: "hikamer's portalの運営者によるブログ。Web開発、個人開発サービスの運用、コミュニティ管理、Next.jsやCoolifyの実践ノウハウを発信しています。",
     url: "https://hikamer.f5.si/blog",
     siteName: "hikamer's portal",
     type: "website",
@@ -28,7 +28,7 @@ export default function BlogIndexPage() {
 
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">ブログ</h1>
         <p className="text-gray-400 mb-10">
-          hikamer&apos;s portalの運営者によるブログです。界隈の歴史、Web開発のノウハウ、コミュニティ運営の心得などを発信しています。
+          hikamer&apos;s portalの運営者によるブログです。Web開発のノウハウ、個人開発サービスの運用、コミュニティ管理の心得などを発信しています。
         </p>
 
         <div className="space-y-6">

@@ -7,7 +7,7 @@ export default function AboutPage() {
         <div className="flex flex-col gap-8 text-sm text-gray-400 leading-relaxed">
           <section>
             <h2 className="text-base font-semibold text-white mb-2">サイトの目的</h2>
-            <p>hikamer&apos;s portalは、hikamerが開発・運営するWebサービス・ツール・ゲームを一箇所にまとめたポータルサイトです。ヒカマー界隈向けのコンテンツを中心に、誰でも気軽に使えるサービスを公開しています。</p>
+            <p>hikamer&apos;s portalは、十字架_maniaが開発・運営するWebサービス・ツール・ゲームを一箇所にまとめたポータルサイトです。個人開発したWebサービス・ツール・ゲームを中心に、誰でも気軽に使えるサービスを公開しています。</p>
           </section>
           <section>
             <h2 className="text-base font-semibold text-white mb-2">運営者プロフィール</h2>
