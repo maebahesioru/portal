@@ -82,8 +82,34 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* Grid */}
       <main>
+        {/* Site purpose */}
+        <div className="max-w-6xl mx-auto px-6 pb-10">
+          <div className="rounded-2xl border border-white/8 bg-white/3 p-8">
+            <p className="text-gray-400 leading-relaxed text-sm">
+              このポータルは、個人エンジニア <strong className="text-white">hikamer</strong> が開発・運営する20以上のWebサービスのカタログ兼技術ブログです。Next.js + TypeScript + Coolifyによるモダンスタックで構築され、各サービスの詳細解説や開発ノウハウを発信しています。単なるリンク集ではなく、実際のコードに基づいた一次情報を提供する開発者向け情報サイトです。
+            </p>
+          </div>
+        </div>
+
+        {/* Blog */}
+        <div className="max-w-6xl mx-auto px-6 pb-10">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-bold text-white">開発ブログ</h2>
+            <Link href="/blog" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">すべて見る →</Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {recentPosts.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="block p-5 rounded-2xl border border-white/8 bg-white/3 hover:bg-white/6 hover:border-white/15 transition-all">
+                <time className="text-xs text-gray-500 mb-2 block">{post.date}</time>
+                <h3 className="text-lg font-bold text-white mb-2 line-clamp-2">{post.title}</h3>
+                <p className="text-sm text-gray-400 line-clamp-2">{post.excerpt}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Grid */}
         <AppGrid apps={apps.map((a) => ({ name: a.name, fqdn: a.fqdn! }))} allMetas={allMetas} />
 
         {/* Sponsors */}
@@ -118,23 +144,6 @@ export default async function Home() {
             </div>
           </div>
         )}
-
-        {/* Blog */}
-        <div className="max-w-6xl mx-auto px-6 pb-10">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold text-white">開発ブログ</h2>
-            <Link href="/blog" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">すべて見る →</Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {recentPosts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="block p-5 rounded-2xl border border-white/8 bg-white/3 hover:bg-white/6 hover:border-white/15 transition-all">
-                <time className="text-xs text-gray-500 mb-2 block">{post.date}</time>
-                <h3 className="text-lg font-bold text-white mb-2 line-clamp-2">{post.title}</h3>
-                <p className="text-sm text-gray-400 line-clamp-2">{post.excerpt}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
 
         {/* About */}
         <div className="max-w-6xl mx-auto px-6 pb-10">

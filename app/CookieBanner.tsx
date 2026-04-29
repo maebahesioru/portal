@@ -2,6 +2,10 @@
 
 import { useEffect, useState } from "react";
 
+declare global {
+  interface Window { __tcfapi?: (cmd: string, version: number, cb: (tcData: any, success: boolean) => void) => void; }
+}
+
 export default function CookieBanner() {
   const [show, setShow] = useState(false);
 
@@ -15,11 +19,21 @@ export default function CookieBanner() {
   const accept = () => {
     localStorage.setItem("cookie_consent", "accepted");
     setShow(false);
+    // AdSense 個人化広告を有効化（デフォルト）
+    try {
+      (window as any).adsbygoogle = (window as any).adsbygoogle || [];
+      (window as any).adsbygoogle.pauseAdRequests = 0;
+    } catch {}
   };
 
   const decline = () => {
     localStorage.setItem("cookie_consent", "declined");
     setShow(false);
+    // AdSense 非個人化広告（npa=1）を設定
+    try {
+      (window as any).adsbygoogle = (window as any).adsbygoogle || [];
+      (window as any).adsbygoogle.requestNonPersonalizedAds = 1;
+    } catch {}
   };
 
   if (!show) return null;

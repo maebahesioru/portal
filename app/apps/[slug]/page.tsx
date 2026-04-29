@@ -65,16 +65,26 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": app.name,
-            "applicationCategory": "WebApplication",
-            "operatingSystem": "Web Browser",
-            "description": app.shortDescription,
-            "url": app.fqdn,
-            "author": { "@type": "Person", "name": "hikamer" },
-          }),
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hikamer.f5.si" },
+                { "@type": "ListItem", "position": 2, "name": app.name, "item": `https://hikamer.f5.si/apps/${app.slug}` },
+              ],
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": app.name,
+              "applicationCategory": "WebApplication",
+              "operatingSystem": "Web Browser",
+              "description": app.shortDescription,
+              "url": app.fqdn,
+              "author": { "@type": "Person", "name": "hikamer" },
+            },
+          ]),
         }}
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
