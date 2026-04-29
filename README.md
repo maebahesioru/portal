@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# hikamer's portal
 
-## Getting Started
+> 十字架_mania が開発・運営する20以上のWebサービスのカタログ兼技術ブログ
 
-First, run the development server:
+## 概要
+
+Next.js 16 + TypeScript + Tailwind CSS 4 で構築されたポータルサイト。Coolify APIと連携し、全サービスの一覧表示・詳細解説・OGP情報の動的取得を行う。ブログはMarkdownファイル管理（gray-matter + marked）。
+
+## 技術スタック
+
+- Next.js 16.2.3 (App Router)
+- React 19.2 / TypeScript 5
+- Tailwind CSS 4 + @tailwindcss/typography
+- marked + gray-matter (Markdownブログ)
+- Sharp (画像最適化)
+- Coolify API (アプリ一覧取得)
+
+## 起動方法
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 環境変数
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`.env.example` をコピーして `.env.local` を作成：
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| 変数 | 説明 |
+|---|---|
+| `COOLIFY_URL` | Coolify APIのURL |
+| `COOLIFY_TOKEN` | Coolify APIトークン |
+| `HKM_API_URL` | ヒカマニコインAPIのURL（任意） |
 
-## Learn More
+## ブログの追加
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# posts/ に .md ファイルを追加するだけ
+cp template.md posts/my-article.md
+git add posts/ && git commit -m "new article" && git push
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## アプリ説明の追加
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# apps/ に .md ファイルを追加
+# ---
+# slug: "my-app"
+# name: "my-app"
+# fqdn: "https://my-app.example.com"
+# shortDescription: "概要"
+# tags: [タグ1, タグ2]
+# ---
+# Markdown本文...
+```
 
-## Deploy on Vercel
+## ライセンス
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+MIT
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 運営者
+
+- **十字架_mania** ([@maebahesioru2](https://x.com/maebahesioru2))
+- Discord: [招待リンク](https://discord.com/invite/26U6r5xMBx)

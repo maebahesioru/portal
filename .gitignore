@@ -42,3 +42,4 @@ next-env.d.ts
 
 # generated
 all-code.txt
+all-code-*.txt
