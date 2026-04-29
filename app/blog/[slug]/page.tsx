@@ -32,7 +32,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const html = marked(post.content);
+  const rawHtml = await marked(post.content);
+  // remove duplicative first h1 since page template already shows title
+  const html = rawHtml.replace(/^<h1[^>]*>.*?<\/h1>\s*/, "");
   const allPosts = getAllPosts();
   const currentIndex = allPosts.findIndex((p) => p.slug === slug);
   const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
