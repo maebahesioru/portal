@@ -50,6 +50,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-base font-semibold text-white mb-2">外部サービス</h2>
             <p>本サイトに掲載されている各アプリは運営者が開発・運営しています。各サービスのプライバシーポリシーはそれぞれのサービスに準じます。</p>
+            <p className="mt-2">一部のサービスでは以下の外部APIを利用しています：Yahooリアルタイム検索API、Google Gemini AI、Supabase認証・データベース、fxtwitter APIなど。これらのAPI利用は各提供元の利用規約に従っており、取得したデータはサービス提供の目的にのみ使用しています。</p>
           </section>
           <section>
             <h2 className="text-base font-semibold text-white mb-2">お問い合わせ</h2>
