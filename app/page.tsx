@@ -1,5 +1,4 @@
 import AppGrid from "./AppGrid";
-import Footer from "./Footer";
 import HikamaniClock from "./HikamaniClock";
 import Image from "next/image";
 import Link from "next/link";
@@ -194,8 +193,6 @@ export default async function Home() {
         </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
