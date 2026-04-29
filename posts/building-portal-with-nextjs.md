@@ -1,6 +1,6 @@
 ---
 title: "Next.jsでポータルサイトを開発する方法"
-date: "2026-03-01"
+date: "2026-02-14"
 excerpt: "本サイトの技術的な裏側を解説。Next.js App Router、Tailwind CSS、Coolify、Markdownを使った開発フローを紹介します。"
 ---
 
