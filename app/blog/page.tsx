@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts } from "./posts";
+import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "ブログ - hikamer's portal",

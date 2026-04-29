@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
-import { getAllPosts, getPostBySlug } from "../posts";
+import { getAllPosts, getPostBySlug } from "@/lib/posts";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
