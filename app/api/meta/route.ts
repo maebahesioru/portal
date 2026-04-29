@@ -5,7 +5,10 @@ export async function GET(req: NextRequest) {
   if (!url) return NextResponse.json({}, { status: 400 });
 
   try {
-    const res = await fetch(url, { signal: AbortSignal.timeout(5000) });
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(8000),
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; HikamerBot/1.0)" },
+    });
     const html = await res.text();
 
     const getMeta = (attr: string, value: string) => {
@@ -35,10 +38,11 @@ export async function GET(req: NextRequest) {
       ? (u.startsWith("http") ? u : `${base.origin}${u.startsWith("/") ? "" : "/"}${u}`)
       : null;
 
-    // <link rel="icon"> or <link rel="shortcut icon"> を優先、なければ /favicon.ico
+    // favicon: exact match first, then fuzzy, then fallback
     const faviconPath =
+      html.match(/<link[^>]+rel=["']icon["'][^>]+href=["']([^"']+)["']/i)?.[1] ??
+      html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']icon["']/i)?.[1] ??
       html.match(/<link[^>]+rel=["'][^"']*icon[^"']*["'][^>]+href=["']([^"']+)["']/i)?.[1] ??
-      html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["'][^"']*icon[^"']*["']/i)?.[1] ??
       "/favicon.ico";
 
     const favicon = toAbsolute(faviconPath.split("?")[0]);
