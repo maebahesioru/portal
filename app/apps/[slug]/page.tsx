@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
 import { getAppMeta, getAllAppMetas } from "@/lib/apps";
 import PlaceholderImage from "../../PlaceholderImage";
+import OgpImage from "./OgpImage";
 
 function stripPort(url: string) {
   try { const u = new URL(url); u.port = ""; return u.toString(); } catch { return url; }
@@ -98,18 +98,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
 
         {/* OGP Image */}
         {meta?.ogImage ? (
-          <div className="relative w-full h-56 sm:h-80 rounded-2xl overflow-hidden mb-8 border border-white/8">
-            <Image
-              src={`/api/img?url=${encodeURIComponent(meta.ogImage)}&w=800`}
-              alt={app.name}
-              fill
-              sizes="(max-width: 768px) 100vw, 800px"
-              className="object-cover"
-              unoptimized
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          </div>
+          <OgpImage src={meta.ogImage} name={app.name} />
         ) : (
           <div className="w-full h-56 sm:h-80 rounded-2xl overflow-hidden mb-8 border border-white/8">
             <PlaceholderImage name={app.name} />
