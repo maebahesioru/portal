@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllAppMetas } from "./app-descriptions";
+import { getAllAppMetas } from "@/lib/apps";
 import { getAllPosts } from "@/lib/posts";
 
 const BASE = "https://hikamer.f5.si";

@@ -4,6 +4,7 @@ import HikamaniClock from "./HikamaniClock";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
+import { getAllAppMetas, AppMeta } from "@/lib/apps";
 
 type CoolifyApp = { name: string; fqdn: string | null };
 type Sponsor = { userId: string; displayName: string; avatar: string | null; slug: string; big: boolean; expiresAt: string | null };
@@ -48,6 +49,7 @@ export default async function Home() {
   const bigSponsors = sponsors.filter((s) => s.big);
   const normalSponsors = sponsors.filter((s) => !s.big);
   const recentPosts = getAllPosts().slice(0, 3);
+  const allMetas = getAllAppMetas();
 
   return (
     <div className="min-h-screen" style={{ background: "var(--background)" }}>
@@ -83,7 +85,7 @@ export default async function Home() {
 
       {/* Grid */}
       <main>
-        <AppGrid apps={apps.map((a) => ({ name: a.name, fqdn: a.fqdn! }))} />
+        <AppGrid apps={apps.map((a) => ({ name: a.name, fqdn: a.fqdn! }))} allMetas={allMetas} />
 
         {/* Sponsors */}
         {sponsors.length > 0 && (

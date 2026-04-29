@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
-import { getAppMeta, getAllAppMetas } from "../../app-descriptions";
+import { getAppMeta, getAllAppMetas } from "@/lib/apps";
 
 function stripPort(url: string) {
   try { const u = new URL(url); u.port = ""; return u.toString(); } catch { return url; }

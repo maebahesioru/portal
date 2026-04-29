@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import AppCard from "./AppCard";
-import { getAppMetaByName } from "./app-descriptions";
+import { AppMeta } from "@/lib/apps";
 
 function slugFromFqdn(fqdn: string): string | null {
   try {
     const u = new URL(fqdn);
-    // e.g. hikamerautowiki.hikamer.f5.si:3000 -> hikamerautowiki
     const host = u.hostname.split(".")[0];
     return host || null;
   } catch {
@@ -17,10 +16,10 @@ function slugFromFqdn(fqdn: string): string | null {
 
 type App = { name: string; fqdn: string };
 
-export default function AppGrid({ apps }: { apps: App[] }) {
+export default function AppGrid({ apps, allMetas }: { apps: App[]; allMetas: AppMeta[] }) {
   const [query, setQuery] = useState("");
   const filtered = apps.filter((a) => {
-    const meta = getAppMetaByName(a.name);
+    const meta = allMetas.find((m) => m.name === a.name);
     return (
       a.name.toLowerCase().includes(query.toLowerCase()) ||
       (meta?.shortDescription ?? "").toLowerCase().includes(query.toLowerCase()) ||
@@ -49,7 +48,7 @@ export default function AppGrid({ apps }: { apps: App[] }) {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filtered.map((app) => {
-            const meta = getAppMetaByName(app.name);
+            const meta = allMetas.find((m) => m.name === app.name);
             const slug = meta?.slug ?? slugFromFqdn(app.fqdn) ?? app.name;
             return (
               <AppCard
