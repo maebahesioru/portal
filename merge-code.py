@@ -5,7 +5,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 SKIP_DIRS = {"node_modules", ".next", ".git"}
 SKIP_FILES = {"pnpm-lock.yaml"}
 SKIP_STARTS = {".env", "all-code"}
-MAX_CHARS = 100_000
+MAX_CHARS = 90_000
 
 parts = []
 total = 0

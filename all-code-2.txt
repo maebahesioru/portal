@@ -1,5 +1,334 @@
 
 ================================================================================
+FILE: apps/takuya-tts.md
+================================================================================
+
+---
+slug: "takuya-tts"
+name: "takuya-tts"
+fqdn: "https://takuya-tts.hikamer.f5.si"
+shortDescription: "日本語テキスト読み上げ（TTS）サービス。Oddcast TTS APIを使用し、入力テキストを自然な音声で再生。MP3ダウンロード対応。"
+tags: [TTS, 音声, ツール, 日本語]
+---
+
+# takuya-tts — 日本語テキスト読み上げ
+
+takuya-ttsは、入力した日本語テキストを自然な音声で読み上げるシンプルなTTSサービスです。Oddcast TTS API（cache-a.oddcast.com）を利用して音声合成を行います。
+
+## 主な機能
+
+- **日本語テキスト読み上げ**: Oddcast TTS APIの日本語音声パラメータ（EID=3, LID=12, VID=2）を使用
+- **リアルタイム音声再生**: HTML5 Audio要素で即時再生
+- **MP3ダウンロード**: Blobフェッチでダウンロード機能
+- **動的タイトル更新**: 読み上げ中にページタイトルを更新
+- **SEO最適化**: schema.org WebApplication JSON-LD、日本語キーワード、OpenGraph、canonical設定
+- **アクセシビリティ**: aria-label、セマンティックHTML
+
+## 技術スタック
+
+- Next.js 16.1.6、React 19.2、TypeScript、Tailwind CSS 4
+- Geist + Geist Mono フォント
+- babel-plugin-react-compiler
+- Oddcast TTS API（ブラウザから直接API呼び出し）
+- 青/藍色グラデーションデザイン
+- PWAマニフェスト\n
+## 開発の裏話
+
+Oddcast TTS APIの日本語音声パラメータ（EID=3, LID=12, VID=2）を見つけるまでに非公開ドキュメントの解析が必要でした。
+
+================================================================================
+FILE: apps/twigacha.md
+================================================================================
+
+---
+slug: "twigacha"
+name: "twigacha"
+fqdn: "https://twigacha.hikamer.f5.si"
+shortDescription: "Twitter/Bluesky/Misskey/MastodonのアカウントをTCGカード化するマルチプラットフォームガチャゲーム。8段階レアリティ、バトルシステム、オンライン対戦。"
+tags: [ガチャ, ゲーム, TCG, マルチプラットフォーム]
+---
+
+# twigacha — マルチプラットフォームガチャTCG
+
+twigachaは、Twitter、Bluesky、Misskey、MastodonのアカウントをTCGカードに変換するマルチプラットフォームガチャゲームです。デイリー5パックのカードを引き、コレクションし、バトルも楽しめます。
+
+## ガチャシステム
+
+- **マルチプラットフォーム対応**: Twitter（fxtwitter API）、Bluesky（AT Protocol）、Misskey API、Mastodon API（nodeinfo検出でインスタンス種別判定）
+- **8段階レアリティ**: C→N→R→SR→SSR→UR→LR。公開情報に基づいてレアリティを計算
+- **天井システム**: 10パックSSRなしでUR以上確定
+- **ピックアップガチャ**: Yahooリアルタイム検索で特定ユーザーを検索
+- **HKM仮想通貨**: ヒカキンマニアコインでパック購入可能
+
+## バトルシステム
+
+- **6ステータス**: ATK/DEF/SPD/HP/INT/LUK、各ステータスからスキル派生、実ツイートからアルティメット効果
+- **PvEクエスト**: ステージ制
+- **オンラインPvP**: Webプッシュ通知で対戦通知
+- **チームバトル、レイドバトル**
+
+## その他機能
+
+- **デイリーミッション**: 5種類のデイリータスク
+- **シリアルコード**: コード交換システム
+- **カード署名**: HMACベースの改ざん防止
+- **コレクション**: 重複トラッキング、ガチャ統計ダッシュボード
+- **PWA**: マニフェスト対応
+
+## 技術スタック
+
+- Next.js 16.1.6、React 19.2、TypeScript、Tailwind CSS 4
+- Zustand 5.0.11（永続化状態管理）
+- Supabase（データベース）
+- Web Push API（プッシュ通知）
+- Lucide React、Vercel Analytics\n
+## 開発の裏話
+
+Zustand 5のlocalStorage永続化でカードデータ肥大化によるQuotaExceededErrorが頻発。Supabaseに移行しローカルはメタデータのみにしました。8段階レアリティ計算は6指標の重み付けです。
+
+================================================================================
+FILE: apps/uno.md
+================================================================================
+
+---
+slug: "uno"
+name: "uno"
+fqdn: "https://uno.hikamer.f5.si"
+shortDescription: "ブラウザでAI対戦できるUNOゲーム。カスタムハウスルール、ワイルド+4チャレンジ、Swap/Shuffle/Customワイルドカード。日本語/国際スコアリング対応。"
+tags: [ゲーム, カード, AI, マルチプレイ]
+---
+
+# uno — ブラウザ版UNO
+
+unoは、ブラウザ上でAI相手にUNOをプレイできるカードゲームです。独自のハウスルールシステムと3種類のオプションワイルドカードを搭載しています。
+
+## ゲームシステム
+
+- **AI対戦**: 複数のAI相手と対戦（aiPlayer.ts）
+- **ハウスルール**: 山札重ね、ワイルド+4いつでも、複数枚同時出し、連番出し、アクションカード上がり禁止、ラストマンスタンディング
+- **オプションワイルドカード**: Swap（手札交換）、Shuffle（シャッフル）、Custom（カスタム）
+- **ワイルド+4チャレンジ**: 正式ルールのチャレンジ判定
+- **スコアリング**: 日本式/国際式切り替え
+- **グリーン/ピンクグラデーション**: ダークテーマUI
+
+## 技術スタック
+
+- Next.js 14.2、React 18.3、TypeScript、Tailwind CSS 3.4
+- GameSetup → GameBoard フロー（クライアントコンポーネント）
+- 純粋なフロントエンドゲーム（外部API・DBなし）
+- PostCSS\n
+## 開発の裏話
+
+AIプレイヤー（aiPlayer.ts）は状態ベース戦略で実装。ワイルド+4チャレンジ判定やハウスルールのオンオフをすべてクライアントサイド完結させるのに苦労しました。
+
+================================================================================
+FILE: CLAUDE.md
+================================================================================
+
+@AGENTS.md
+
+
+================================================================================
+FILE: eslint.config.mjs
+================================================================================
+
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;
+
+
+================================================================================
+FILE: lib/apps.ts
+================================================================================
+
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+
+const appsDir = path.join(process.cwd(), "apps");
+
+export interface AppMeta {
+  slug: string;
+  name: string;
+  fqdn: string;
+  shortDescription: string;
+  longDescription: string;
+  tags: string[];
+}
+
+export function getAllAppMetas(): AppMeta[] {
+  const files = fs.readdirSync(appsDir).filter((f) => f.endsWith(".md"));
+  return files.map((file) => {
+    const slug = file.replace(/\.md$/, "");
+    const raw = fs.readFileSync(path.join(appsDir, file), "utf8");
+    const { data, content } = matter(raw);
+    return {
+      slug: data.slug ?? slug,
+      name: data.name ?? slug,
+      fqdn: data.fqdn ?? "",
+      shortDescription: data.shortDescription ?? "",
+      longDescription: content.trim(),
+      tags: data.tags ?? [],
+    };
+  });
+}
+
+export function getAppMeta(slug: string): AppMeta | undefined {
+  return getAllAppMetas().find((a) => a.slug === slug);
+}
+
+export function getAppMetaByName(name: string): AppMeta | undefined {
+  return getAllAppMetas().find((a) => a.name === name);
+}
+
+export function getDescriptions(): Record<string, string> {
+  const m: Record<string, string> = {};
+  for (const a of getAllAppMetas()) m[a.name] = a.shortDescription;
+  return m;
+}
+
+
+================================================================================
+FILE: lib/posts.ts
+================================================================================
+
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+
+const postsDir = path.join(process.cwd(), "posts");
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  content: string;
+}
+
+export function getAllPosts(): BlogPost[] {
+  const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".md"));
+  const posts = files.map((file) => {
+    const slug = file.replace(/\.md$/, "");
+    const raw = fs.readFileSync(path.join(postsDir, file), "utf8");
+    const { data, content } = matter(raw);
+    return {
+      slug,
+      title: data.title ?? slug,
+      date: data.date ?? "",
+      excerpt: data.excerpt ?? "",
+      content,
+    };
+  });
+  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export function getPostBySlug(slug: string): BlogPost | undefined {
+  return getAllPosts().find((p) => p.slug === slug);
+}
+
+
+================================================================================
+FILE: merge-code.py
+================================================================================
+
+import os
+import sys
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+SKIP_DIRS = {"node_modules", ".next", ".git"}
+SKIP_FILES = {"pnpm-lock.yaml"}
+SKIP_STARTS = {".env", "all-code"}
+MAX_CHARS = 90_000
+
+parts = []
+total = 0
+file_idx = 1
+
+
+def flush():
+    global parts, file_idx
+    if not parts:
+        return
+    name = "all-code.txt" if file_idx == 1 else f"all-code-{file_idx}.txt"
+    path = os.path.join(BASE, name)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("".join(parts))
+    print(f"Wrote: {name} ({len(''.join(parts)):,} chars)")
+    parts = []
+    file_idx += 1
+
+
+def add_file(rel, content):
+    global total
+    header = f"\n{'=' * 80}\nFILE: {rel}\n{'=' * 80}\n\n"
+    block = header + content + "\n"
+
+    if parts and len("".join(parts)) + len(block) > MAX_CHARS:
+        flush()
+    parts.append(block)
+    total += 1
+
+
+def walk(directory):
+    try:
+        for entry in os.scandir(directory):
+            if entry.is_dir():
+                if entry.name not in SKIP_DIRS and not entry.name.startswith("."):
+                    walk(entry.path)
+            elif entry.is_file():
+                if entry.name in SKIP_FILES:
+                    continue
+                if any(entry.name.startswith(p) for p in SKIP_STARTS):
+                    continue
+                try:
+                    stat = entry.stat()
+                    if stat.st_size > 500_000:
+                        continue
+                    with open(entry.path, "r", encoding="utf-8", errors="replace") as f:
+                        content = f.read().replace("\r\n", "\n")
+                    rel = os.path.relpath(entry.path, BASE).replace("\\", "/")
+                    add_file(rel, content)
+                except (PermissionError, UnicodeDecodeError, OSError):
+                    pass
+    except PermissionError:
+        pass
+
+
+if __name__ == "__main__":
+    walk(BASE)
+    flush()
+    print(f"Done. {total} files, {file_idx - 1} output files")
+
+
+================================================================================
+FILE: next-env.d.ts
+================================================================================
+
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+import "./.next/types/routes.d.ts";
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/app/api-reference/config/typescript for more information.
+
+
+================================================================================
 FILE: next.config.ts
 ================================================================================
 
@@ -43,7 +372,7 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://static.cloudflareinsights.com https://cmp.inmobi.com https://www.themoneytizer.com",
+              "script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://static.cloudflareinsights.com https://cmp.inmobi.com https://www.themoneytizer.com",
               "style-src 'self' 'unsafe-inline' https:",
               "style-src-elem 'self' 'unsafe-inline' https:",
               "img-src 'self' data: https: http:",
@@ -1763,42 +2092,70 @@ FILE: public/window.svg
 FILE: README.md
 ================================================================================
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# hikamer's portal
 
-## Getting Started
+> 十字架_mania が開発・運営する20以上のWebサービスのカタログ兼技術ブログ
 
-First, run the development server:
+## 概要
+
+Next.js 16 + TypeScript + Tailwind CSS 4 で構築されたポータルサイト。Coolify APIと連携し、全サービスの一覧表示・詳細解説・OGP情報の動的取得を行う。ブログはMarkdownファイル管理（gray-matter + marked）。
+
+## 技術スタック
+
+- Next.js 16.2.3 (App Router)
+- React 19.2 / TypeScript 5
+- Tailwind CSS 4 + @tailwindcss/typography
+- marked + gray-matter (Markdownブログ)
+- Sharp (画像最適化)
+- Coolify API (アプリ一覧取得)
+
+## 起動方法
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 環境変数
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`.env.example` をコピーして `.env.local` を作成：
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| 変数 | 説明 |
+|---|---|
+| `COOLIFY_URL` | Coolify APIのURL |
+| `COOLIFY_TOKEN` | Coolify APIトークン |
+| `HKM_API_URL` | ヒカマニコインAPIのURL（任意） |
 
-## Learn More
+## ブログの追加
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# posts/ に .md ファイルを追加するだけ
+cp template.md posts/my-article.md
+git add posts/ && git commit -m "new article" && git push
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## アプリ説明の追加
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# apps/ に .md ファイルを追加
+# ---
+# slug: "my-app"
+# name: "my-app"
+# fqdn: "https://my-app.example.com"
+# shortDescription: "概要"
+# tags: [タグ1, タグ2]
+# ---
+# Markdown本文...
+```
 
-## Deploy on Vercel
+## ライセンス
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+MIT
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 運営者
+
+- **十字架_mania** ([@maebahesioru2](https://x.com/maebahesioru2))
+- Discord: [招待リンク](https://discord.com/invite/26U6r5xMBx)
 
 
 ================================================================================
