@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
 import { getAppMeta, getAllAppMetas } from "@/lib/apps";
+import PlaceholderImage from "../../PlaceholderImage";
 
 function stripPort(url: string) {
   try { const u = new URL(url); u.port = ""; return u.toString(); } catch { return url; }
@@ -110,8 +111,8 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           </div>
         ) : (
-          <div className="w-full h-40 sm:h-56 rounded-2xl bg-white/5 border border-white/8 mb-8 flex items-center justify-center text-gray-500 text-sm">
-            プレビュー画像がありません
+          <div className="w-full h-56 sm:h-80 rounded-2xl overflow-hidden mb-8 border border-white/8">
+            <PlaceholderImage name={app.name} />
           </div>
         )}
 
