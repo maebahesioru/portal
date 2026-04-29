@@ -4,7 +4,6 @@ name: "hikafuwa-box"
 fqdn: "https://hikafuwa-box.hikamer.f5.si"
 shortDescription: "AIが画像から面白いツイートを生成するサービス。Google Gemini AIを利用し、画像内容を解析してジョークツイートを自動生成。10段階テンションスライダー搭載。"
 tags: [AI, 画像解析, ツイート, Gemini]
-launchedAt: 2022
 ---
 
 # hikafuwa-box — AIで画像からネタツイートを生成

@@ -4,7 +4,6 @@ name: "uno"
 fqdn: "https://uno.hikamer.f5.si"
 shortDescription: "ブラウザでAI対戦できるUNOゲーム。カスタムハウスルール、ワイルド+4チャレンジ、Swap/Shuffle/Customワイルドカード。日本語/国際スコアリング対応。"
 tags: [ゲーム, カード, AI, マルチプレイ]
-launchedAt: 2021
 ---
 
 # uno — ブラウザ版UNO

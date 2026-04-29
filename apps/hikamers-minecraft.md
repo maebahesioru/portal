@@ -4,7 +4,6 @@ name: "hikamers-minecraft"
 fqdn: "https://hikamers-minecraft.hikamer.f5.si"
 shortDescription: "ヒカマー界隈のMinecraftサーバー情報サイト。Java版・統合版の両方に対応。サーバー参加ガイド、建築ギャラリー、イベント記録、接続方法を詳しく解説。"
 tags: [Minecraft, ゲーム, コミュニティ, サーバー]
-launchedAt: 2021
 ---
 
 # hikamers-minecraft — ヒカマーズマイクラ公式サイト

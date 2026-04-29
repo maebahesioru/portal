@@ -4,7 +4,6 @@ name: "hikamersnews"
 fqdn: "https://hikamersnews.hikamer.f5.si"
 shortDescription: "ヒカマー界隈の出来事をまとめた静的ニュースサイト。記事をカテゴリー別に閲覧できるシンプルな情報サイト。Vite SPAで軽量高速表示。"
 tags: [ニュース, メディア, 情報, コミュニティ]
-launchedAt: 2022
 ---
 
 # hikamersnews — ヒカマー新聞

@@ -126,9 +126,6 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
               </span>
             ))}
           </div>
-          {app.launchedAt && (
-            <p className="text-sm text-gray-500">公開年: {app.launchedAt}</p>
-          )}
         </div>
 
         {/* Long description */}

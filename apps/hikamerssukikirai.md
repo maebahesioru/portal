@@ -4,7 +4,6 @@ name: "hikamerssukikirai"
 fqdn: "https://hikamer-suki-kira.hikamer.f5.si"
 shortDescription: "ヒカマー界隈の好き嫌い投票・集計サービス。コミュニティメンバーへの投票、コメント、ランキング表示。Supabaseバックエンドでリアルタイム集計。"
 tags: [投票, ランキング, エンタメ, Supabase]
-launchedAt: 2022
 ---
 
 # hikamerssukikirai — ヒカマーズ好き嫌い.com

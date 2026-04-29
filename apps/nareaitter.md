@@ -4,7 +4,6 @@ name: "nareaitter"
 fqdn: "https://nareaitter.hikamer.f5.si"
 shortDescription: "Twitterユーザーの交流関係を可視化するグラフサービス。ハンドルネームを入力するとフォースディレクテッドグラフでメンション関係を表示。家系図ビューやCSVエクスポート対応。"
 tags: [SNS, 可視化, Twitter, Cloudflare]
-launchedAt: 2022
 ---
 
 # nareaitter — Twitter交流関係可視化

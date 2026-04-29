@@ -4,7 +4,6 @@ name: "illustsagasitter"
 fqdn: "https://illustsagasitter.hikamer.f5.si"
 shortDescription: "Twitterイラスト検索エンジン。キーワードからTwitter上のイラストを検索。ギャラリー表示、フルスクリーンビューア、イラストレーターフィルター、R18/AI画像フィルター対応。"
 tags: [イラスト, 検索, Twitter, SSE]
-launchedAt: 2022
 ---
 
 # illustsagasitter — Twitterイラスト検索

@@ -4,7 +4,6 @@ name: "searxng"
 fqdn: "https://searxng.hikamer.f5.si"
 shortDescription: "プライバシー重視のオープンソースメタ検索エンジン。Google、Bing、DuckDuckGoなどを横断検索。検索履歴を記録せず、自己完結型インフラで運用。"
 tags: [検索, プライバシー, オープンソース, ツール]
-launchedAt: 2021
 ---
 
 # searxng — プライバシーメタ検索エンジン

@@ -4,7 +4,6 @@ name: "hikamersakinator"
 fqdn: "https://hikamersakinator.hikamer.f5.si"
 shortDescription: "ヒカマー版アキネーター。界隈のキャラクターを質問で当てるゲーム。エントロピーベースの質問選択で通常15問以内に正解到達。100体近くのキャラクターDB。"
 tags: [ゲーム, 診断, クイズ, エンタメ]
-launchedAt: 2022
 ---
 
 # hikamersakinator — ヒカマー版アキネーター

@@ -4,7 +4,6 @@ name: "retweet-clicker"
 fqdn: "https://retweet-clicker.hikamer.f5.si"
 shortDescription: "リツイートを題材にした放置系クリッカーゲーム。クリックでRTを稼ぎ、アップグレード購入、実績解除。タイピングミニゲームやコンボシステム搭載。"
 tags: [ゲーム, クリッカー, エンタメ, 放置系]
-launchedAt: 2022
 ---
 
 # retweet-clicker — RTクリッカーゲーム

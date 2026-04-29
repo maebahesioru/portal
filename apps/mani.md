@@ -4,7 +4,6 @@ name: "mani"
 fqdn: "https://mani.hikamer.f5.si"
 shortDescription: "AIが日本語テキストをヒカマニ語録に変換するスタイル翻訳サービス。Gemini AIを使用し、ヒカマニ・コウヘイ・カツヒコ・淫夢などの界隈方言に翻訳。"
 tags: [翻訳, ファン, コンテンツ, コミュニティ]
-launchedAt: 2021
 ---
 
 # mani — ヒカマニ語録翻訳サービス

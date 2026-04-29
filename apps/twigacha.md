@@ -4,7 +4,6 @@ name: "twigacha"
 fqdn: "https://twigacha.hikamer.f5.si"
 shortDescription: "Twitter/Bluesky/Misskey/MastodonのアカウントをTCGカード化するマルチプラットフォームガチャゲーム。8段階レアリティ、バトルシステム、オンライン対戦。"
 tags: [ガチャ, ゲーム, TCG, マルチプラットフォーム]
-launchedAt: 2022
 ---
 
 # twigacha — マルチプラットフォームガチャTCG

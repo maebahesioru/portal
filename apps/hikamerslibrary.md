@@ -4,7 +4,6 @@ name: "hikamerslibrary"
 fqdn: "https://hikamerslibrary.hikamer.f5.si"
 shortDescription: "30万件以上のツイートを検索できる高速ツイート検索エンジン。音声検索、AI検索、AMP対応。Supabase + PostgreSQLでデータ管理。"
 tags: [検索エンジン, ツイート, AI, Supabase]
-launchedAt: 2022
 ---
 
 # hikamerslibrary — ツイート検索エンジン HikamersSearch

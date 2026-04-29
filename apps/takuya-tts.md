@@ -4,7 +4,6 @@ name: "takuya-tts"
 fqdn: "https://takuya-tts.hikamer.f5.si"
 shortDescription: "日本語テキスト読み上げ（TTS）サービス。Oddcast TTS APIを使用し、入力テキストを自然な音声で再生。MP3ダウンロード対応。"
 tags: [TTS, 音声, ツール, 日本語]
-launchedAt: 2022
 ---
 
 # takuya-tts — 日本語テキスト読み上げ

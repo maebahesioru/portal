@@ -4,7 +4,6 @@ name: "maebahesioru-portfolio"
 fqdn: "https://maebahesioru-portfolio.hikamer.f5.si"
 shortDescription: "hikamer（maebahesioru）の個人ポートフォリオ。20以上のSNSリンクと開発プロジェクトを集約したリンクインバイオ。アニメーションとカスタムSVGアイコン。"
 tags: [ポートフォリオ, リンク集, デザイン, アニメーション]
-launchedAt: 2021
 ---
 
 # maebahesioru-portfolio — 開発者ポートフォリオ

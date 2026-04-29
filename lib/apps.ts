@@ -11,7 +11,6 @@ export interface AppMeta {
   shortDescription: string;
   longDescription: string;
   tags: string[];
-  launchedAt?: string;
 }
 
 export function getAllAppMetas(): AppMeta[] {
@@ -27,7 +26,6 @@ export function getAllAppMetas(): AppMeta[] {
       shortDescription: data.shortDescription ?? "",
       longDescription: content.trim(),
       tags: data.tags ?? [],
-      launchedAt: data.launchedAt ?? undefined,
     };
   });
 }

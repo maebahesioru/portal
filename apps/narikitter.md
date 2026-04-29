@@ -4,7 +4,6 @@ name: "narikitter"
 fqdn: "https://narikitter.hikamer.f5.si"
 shortDescription: "AIがTwitterユーザーになりきって会話できるチャットサービス。Yahooリアルタイム検索で本人のツイートを分析し口調を再現。Google OAuthログイン対応。"
 tags: [AI, チャット, SNS, Stripe]
-launchedAt: 2022
 ---
 
 # narikitter — AIなりきりチャット

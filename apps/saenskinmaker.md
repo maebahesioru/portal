@@ -4,7 +4,6 @@ name: "saenskinmaker"
 fqdn: "https://saenskinmaker.hikamer.f5.si"
 shortDescription: "AIで音声ファイルから音素（ひらがな）を自動検出し、UTAU音源を作成する人力ボーカロイドジェネレーター。transformers.jsとFFmpeg.wasmでブラウザ完結。"
 tags: [クリエイティブ, スキン, デザイン, ツール]
-launchedAt: 2022
 ---
 
 # saenskinmaker — SAENSキン 人力ボーカロイドジェネレーター

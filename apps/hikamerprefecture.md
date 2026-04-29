@@ -4,7 +4,6 @@ name: "hikamerprefecture"
 fqdn: "https://hikamerprefecture.hikamer.f5.si"
 shortDescription: "Yahooリアルタイム検索でツイートから都道府県名を検出し、D3.jsでインタラクティブ日本地図に可視化するデータ分析ツール。Supabaseでデータを永続化。"
 tags: [エンタメ, 可視化, コミュニティ, 地図]
-launchedAt: 2022
 ---
 
 # hikamerprefecture — ツイート都道府県分布マップ

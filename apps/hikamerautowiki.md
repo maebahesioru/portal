@@ -4,7 +4,6 @@ name: "hikamerautowiki"
 fqdn: "https://hikamerautowiki.hikamer.f5.si"
 shortDescription: "AIがMediaWikiの編集を自動化するアシスタント。指示を入力するだけでWikiページの作成・編集・ファクトチェックをAIが実行。Yahooリアルタイム検索と連携。"
 tags: [Wiki, AI, 自動化, NLP]
-launchedAt: 2023
 ---
 
 # hikamerautowiki — AIによるWiki自動編集アシスタント
