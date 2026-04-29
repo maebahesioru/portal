@@ -60,6 +60,21 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
 
   return (
     <div className="min-h-screen" style={{ background: "var(--background)" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": app.name,
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser",
+            "description": app.shortDescription,
+            "url": app.fqdn,
+            "author": { "@type": "Person", "name": "hikamer" },
+          }),
+        }}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6">

@@ -42,6 +42,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="min-h-screen" style={{ background: "var(--background)" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "datePublished": post.date,
+            "description": post.excerpt,
+            "author": { "@type": "Person", "name": "hikamer" },
+          }),
+        }}
+      />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
         <nav className="text-sm text-gray-500 mb-6">
           <Link href="/" className="hover:text-white transition-colors">ホーム</Link>

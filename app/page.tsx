@@ -2,6 +2,8 @@ import AppGrid from "./AppGrid";
 import Footer from "./Footer";
 import HikamaniClock from "./HikamaniClock";
 import Image from "next/image";
+import Link from "next/link";
+import { getAllPosts } from "@/lib/posts";
 
 type CoolifyApp = { name: string; fqdn: string | null };
 type Sponsor = { userId: string; displayName: string; avatar: string | null; slug: string; big: boolean; expiresAt: string | null };
@@ -45,6 +47,7 @@ export default async function Home() {
   const [apps, sponsors] = await Promise.all([getApps(), getSponsors()]);
   const bigSponsors = sponsors.filter((s) => s.big);
   const normalSponsors = sponsors.filter((s) => !s.big);
+  const recentPosts = getAllPosts().slice(0, 3);
 
   return (
     <div className="min-h-screen" style={{ background: "var(--background)" }}>
@@ -114,6 +117,23 @@ export default async function Home() {
             </div>
           </div>
         )}
+
+        {/* Blog */}
+        <div className="max-w-6xl mx-auto px-6 pb-10">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-bold text-white">開発ブログ</h2>
+            <Link href="/blog" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">すべて見る →</Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {recentPosts.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="block p-5 rounded-2xl border border-white/8 bg-white/3 hover:bg-white/6 hover:border-white/15 transition-all">
+                <time className="text-xs text-gray-500 mb-2 block">{post.date}</time>
+                <h3 className="text-lg font-bold text-white mb-2 line-clamp-2">{post.title}</h3>
+                <p className="text-sm text-gray-400 line-clamp-2">{post.excerpt}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
 
         {/* About */}
         <div className="max-w-6xl mx-auto px-6 pb-10">
