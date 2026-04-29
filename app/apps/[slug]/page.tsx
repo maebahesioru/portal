@@ -53,7 +53,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
   if (!app) notFound();
 
   const meta = await fetchMeta(app.fqdn);
-  const html = marked(app.longDescription);
+  const html = await marked(app.longDescription);
 
   // related apps by tag
   const allApps = getAllAppMetas();

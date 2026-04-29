@@ -60,7 +60,7 @@ export default async function Home() {
             "@type": "WebSite",
             name: "hikamer's portal",
             url: "https://hikamer.f5.si",
-            description: "ヒカマー界隈のWebサービス・ツール・ゲーム集ポータルサイト",
+            description: "個人開発者十字架_maniaが開発・運営するWebサービス・ツール・ゲームのポータルサイト。Next.js、TypeScript、Coolifyを使った開発ノウハウや運用事例を発信しています。",
             author: { "@type": "Person", name: "hikamer", url: "https://x.com/maebahesioru2" },
           }),
         }}
@@ -190,7 +190,7 @@ export default async function Home() {
               <p><span className="text-gray-400">元素マニアの日（2月10日）</span>：ヒカキンが元素マニアと自称した日</p>
               <p><span className="text-gray-400">3月の記念日（3月11日）</span>：特定の投稿者が話題のツイートをしたのが元ネタ</p>
               <p><span className="text-gray-400">光誕祭（4月21日）</span>：ヒカキンの誕生日</p>
-              <p><span className="text-gray-400">凍結の日（5月11日）</span>：コミュニティ内で話題になった出来事に由来する記念日</p>
+              <p><span className="text-gray-400">5月の記念日（5月11日）</span>：コミュニティ内で話題になった出来事に由来する記念日</p>
               <p><span className="text-gray-400">聖誕祭（7月30日）</span>：セイキンの誕生日</p>
               <p><span className="text-gray-400">夏の記念日（8月10日）</span>：語呂合わせに由来する記念日</p>
               <p><span className="text-gray-400">ヒカマー記念日（10月26日）</span>：界隈の有名投稿者が「人気コンテンツ『hikakin_mania』」を投稿した日。現時点で確認できる最古のヒカマー関連資料であり、ヒカマーの起点と位置付けられている。</p>
