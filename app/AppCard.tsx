@@ -60,7 +60,7 @@ export default function AppCard({ slug, name, fqdn, staticDescription }: { slug:
             onError={() => setImgError(true)}
           />
         ) : (
-          <PlaceholderImage name={name} />
+          <PlaceholderImage name={meta?.title ?? name} />
         )}
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
