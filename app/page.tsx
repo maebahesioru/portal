@@ -84,7 +84,7 @@ export default async function Home() {
 
       <main>
         {/* Site purpose */}
-        <div className="max-w-6xl mx-auto px-6 pb-10">
+        <div className="max-w-6xl mx-auto px-6 pt-6 pb-6">
           <div className="rounded-2xl border border-white/8 bg-white/3 p-8">
             <p className="text-gray-400 leading-relaxed text-sm">
               このポータルは、個人エンジニア <strong className="text-white">hikamer</strong> が開発・運営する20以上のWebサービスのカタログ兼技術ブログです。Next.js + TypeScript + Coolifyによるモダンスタックで構築され、各サービスの詳細解説や開発ノウハウを発信しています。単なるリンク集ではなく、実際のコードに基づいた一次情報を提供する開発者向け情報サイトです。
