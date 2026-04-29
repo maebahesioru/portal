@@ -2,13 +2,13 @@
 slug: "narikitter"
 name: "narikitter"
 fqdn: "https://narikitter.hikamer.f5.si"
-shortDescription: "AIがTwitterユーザーになりきって会話できるチャットサービス。Yahooリアルタイム検索で本人のツイートを分析し口調を再現。Google OAuthログイン対応。"
+shortDescription: "公開投稿を参考にしたキャラクター風AIチャットサービス。公開情報から会話スタイルを学習し、チャットを楽しめます。Yahooリアルタイム検索連携。Google OAuthログイン対応。"
 tags: [AI, チャット, SNS, Stripe]
 ---
 
 # narikitter — AIなりきりチャット
 
-narikitterは、任意のTwitterユーザーになりきったAIと会話できるチャットサービスです。Yahooリアルタイム検索APIで本人のツイートを分析し、口調や話し方を再現します。
+narikitterは、公開投稿を参考にしたキャラクター風AIと会話できるチャットサービスです。公開情報から会話スタイルを学習し、チャットを楽しめます。
 
 ## 主な機能
 

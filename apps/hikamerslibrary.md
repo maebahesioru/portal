@@ -8,7 +8,7 @@ tags: [検索エンジン, ツイート, AI, Supabase]
 
 # hikamerslibrary — ツイート検索エンジン HikamersSearch
 
-hikamerslibrary（HikamersSearch）は、30万件以上のツイートを高速検索できるツイート検索エンジンです。キーワード検索に加え、音声入力やAIによる自然言語検索にも対応しています。
+hikamerslibrary（HikamersSearch）は、公開情報を対象としたツイート検索エンジンです。各プラットフォームの利用規約に従って運用しています。
 
 ## 主な機能
 

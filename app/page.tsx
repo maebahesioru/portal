@@ -154,7 +154,7 @@ export default async function Home() {
               <span className="text-white font-medium">ヒカマー</span>とは、ヒカキン（ヒカマニ）とネットミーム文化を組み合わせたコンテンツを好む人々、およびX上に形成されたその界隈のこと。名付け親はうきうさとされている。
             </p>
             <p>
-              ヒカマー界隈は界隈独自の動画文化を容認する派が多く、ヒカマニ・ミーム文化にとどまらず政治的発言も目立つ独自のコミュニティ。垢名に「〇〇_mania」を付けたり、ヒカマー語録・独自ハッシュタグ文化（ヒカマーズアルカイダ、ヒカマーズ情報開示など）を持つ。
+              ヒカマー界隈は界隈独自の動画文化を容認する派が多く、ミーム文化を中心に多様な話題が交わされる独自のコミュニティ。独自の語録やハッシュタグ文化を持つ。
             </p>
             <p>
               一方、音MAD界隈では賛否の分かれる投稿文化として扱われることもある。
@@ -188,14 +188,14 @@ export default async function Home() {
             <div className="space-y-2 text-xs text-gray-500 border-t border-white/8 pt-3 mt-1">
               <p><span className="text-gray-400">元日（1月28日）</span>：マニアさんの初投稿日</p>
               <p><span className="text-gray-400">元素マニアの日（2月10日）</span>：ヒカキンが元素マニアと自称した日</p>
-              <p><span className="text-gray-400">ヒカマーサーフィンの日（3月11日）</span>：特定の投稿者が話題のツイートをしたのが元ネタ</p>
+              <p><span className="text-gray-400">3月の記念日（3月11日）</span>：特定の投稿者が話題のツイートをしたのが元ネタ</p>
               <p><span className="text-gray-400">光誕祭（4月21日）</span>：ヒカキンの誕生日</p>
-              <p><span className="text-gray-400">凍結の日（5月11日）</span>：2025年に起こったヒカマー一斉凍結が元ネタ</p>
+              <p><span className="text-gray-400">凍結の日（5月11日）</span>：コミュニティ内で話題になった出来事に由来する記念日</p>
               <p><span className="text-gray-400">聖誕祭（7月30日）</span>：セイキンの誕生日</p>
-              <p><span className="text-gray-400">夏の記念日（8月10日）</span>：やじゅう＝810</p>
+              <p><span className="text-gray-400">夏の記念日（8月10日）</span>：語呂合わせに由来する記念日</p>
               <p><span className="text-gray-400">ヒカマー記念日（10月26日）</span>：界隈の有名投稿者が「人気コンテンツ『hikakin_mania』」を投稿した日。現時点で確認できる最古のヒカマー関連資料であり、ヒカマーの起点と位置付けられている。</p>
               <p><span className="text-gray-400">ヒカニチ記念日（11月9日）</span>：2022年、TikTokで活動するヒカマー（@hikashin_mania氏）が区別を付けようと思いヒカニチと名付けた日。その後ヒカニチ動画はYouTubeにも進出し、ヒカマニ界隈に広く認知されていった。</p>
-              <p><span className="text-gray-400">日魚終日（12月3日）</span>：ヒカキンが「日本産の魚介類は終わってます」と発言した日</p>
+              <p><span className="text-gray-400">日魚終日（12月3日）</span>：動画内の発言に由来する記念日</p>
             </div>
           </div>
           <HikamaniClock />

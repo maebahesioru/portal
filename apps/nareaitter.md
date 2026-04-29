@@ -2,13 +2,13 @@
 slug: "nareaitter"
 name: "nareaitter"
 fqdn: "https://nareaitter.hikamer.f5.si"
-shortDescription: "Twitterユーザーの交流関係を可視化するグラフサービス。ハンドルネームを入力するとフォースディレクテッドグラフでメンション関係を表示。家系図ビューやCSVエクスポート対応。"
+shortDescription: "公開投稿上のメンション傾向を集計し、交流ネットワークとして可視化する分析ツール。フォースディレクテッドグラフとツリー形式で関係を表示。CSVエクスポート対応。"
 tags: [SNS, 可視化, Twitter, Cloudflare]
 ---
 
 # nareaitter — Twitter交流関係可視化
 
-nareaitterは、Twitterユーザーのメンション関係をフォースディレクテッドサークルグラフで可視化するツールです。Yahooリアルタイム検索APIを使ってメンションを収集し、Canvas上にインタラクティブなグラフを描画します。
+nareaitterは、公開投稿上のメンション傾向を集計し、交流ネットワークをフォースディレクテッドグラフで可視化する分析ツールです。公開情報のみを対象とし、各プラットフォームの利用規約に従って運用しています。
 
 ## 主な機能
 
