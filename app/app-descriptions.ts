@@ -160,7 +160,7 @@ const apps: AppMeta[] = [
     "name": "nareaitter",
     "fqdn": "https://nareaitter.hikamer.f5.si",
     "shortDescription": "Twitterユーザーの交流関係を可視化するグラフサービス。ハンドルネームを入力するとフォースディレクテッドグラフでメンション関係を表示。家系図ビューやCSVエクスポート対応。",
-    "longDescription": "# nareaitter — Twitter交流関係可視化\n\nnareaitterは、Twitterユーザーのメンション関係をフォースディレクテッドサークルグラフで可視化するツールです。Yahooリアルタイム検索APIを使ってメンションを収集し、Canvas上にインタラクティブなグラフを描画します。\n\n## 主な機能\n\n- **フォースディレクテッドグラフ**: Canvasベースの力学モデルでユーザー間のメンション関係を可視化（InteractionCircle）\n- **家系図ビュー**: FamilyTreeCanvasでツリー形式の関係表示\n- **CSVエクスポート**: サークルデータをCSVでダウンロード\n- **画像保存**: html-to-imageでグラフを画像として保存\n- **ダーク/ライトテーマ**: next-themesで切り替え\n- **日英i18n**: LocaleProviderで多言語対応\n- **投げ銭機能**: OFUSEポップアップ連携\n\n## 技術スタック\n\n- Next.js 16.2.2、React 19.2、TypeScript、Tailwind CSS 4\n- OpenNext + Cloudflare Workers デプロイ\n- Geist Mono + Noto Sans JP フォント\n- Yahooリアルタイム検索API（/api/yahoo-mentions）\n- Yahooプロフィール画像プロキシ（/api/image-proxy）\n- html-to-image、next-themes、wrangler",
+    "longDescription": "# nareaitter — Twitter交流関係可視化\n\nnareaitterは、Twitterユーザーのメンション関係をフォースディレクテッドサークルグラフで可視化するツールです。Yahooリアルタイム検索APIを使ってメンションを収集し、Canvas上にインタラクティブなグラフを描画します。\n\n## 主な機能\n\n- **フォースディレクテッドグラフ**: Canvasベースの力学モデルでユーザー間のメンション関係を可視化（InteractionCircle）\n- **家系図ビュー**: FamilyTreeCanvasでツリー形式の関係表示\n- **CSVエクスポート**: サークルデータをCSVでダウンロード\n- **画像保存**: html-to-imageでグラフを画像として保存\n- **ダーク/ライトテーマ**: next-themesで切り替え\n- **日英i18n**: LocaleProviderで多言語対応\n- **投げ銭機能**: OFUSEポップアップ連携\n\n## 技術スタック\n\n- Next.js 16.2.2、React 19.2、TypeScript、Tailwind CSS 4\\n- Geist Mono + Noto Sans JP フォント\n- Yahooリアルタイム検索API（/api/yahoo-mentions）\n- Yahooプロフィール画像プロキシ（/api/image-proxy）\n- html-to-image、next-themes",
     "tags": [
       "SNS",
       "可視化",
@@ -173,8 +173,8 @@ const apps: AppMeta[] = [
     "slug": "narikitter",
     "name": "narikitter",
     "fqdn": "https://narikitter.hikamer.f5.si",
-    "shortDescription": "AIがTwitterユーザーになりきって会話できるチャットサービス。Yahooリアルタイム検索で本人のツイートを分析し口調を再現。Google OAuthログイン、Stripe課金対応。",
-    "longDescription": "# narikitter — AIなりきりチャット\n\nnarikitterは、任意のTwitterユーザーになりきったAIと会話できるチャットサービスです。Yahooリアルタイム検索APIで本人のツイートを分析し、口調や話し方を再現します。\n\n## 主な機能\n\n- **AIなりきりチャット**: Twitterユーザーの公開ツイートからAIが口調を学習し、その人物として会話\n- **バトルモード**: 2人のAIペルソナが会話するバトルモード\n- **グループチャット**: 複数のAIペルソナが参加するグループ会話\n- **Google OAuth認証**: NextAuth.js v5 betaでログイン\n- **Stripeサブスクリプション**: 月額課金でプレミアム機能（使用量制限あり）\n- **会話共有**: 短縮URL共有、スナップショット画像共有、会話パケット共有\n- **PWA対応**: @ducanh2912/next-pwaでオフラインキャッシュ\n- **動的OGP画像**: ユーザーごとのOGP画像を動的生成（/api/og）\n- **Markdownレンダリング**: react-markdown + remark-gfm + remark-breaksでチャット表示\n\n## 技術スタック\n\n- Next.js 16.1.6、React 19、TypeScript、Tailwind CSS 3.4\n- Prisma + PostgreSQL（サブスクリプション管理、月間使用量トラッキング）\n- NextAuth.js v5 beta（Google OAuth）\n- Stripe 20.4.1（課金）\n- react-markdown 9.0.1、Shinobi-s-tag（広告配信）\n\n## DBスキーマ\n\nSubscription（Stripe顧客/サブスクリプション管理）、ChatMonthlyUsage（無料枠追跡）",
+    "shortDescription": "AIがTwitterユーザーになりきって会話できるチャットサービス。Yahooリアルタイム検索で本人のツイートを分析し口調を再現。Google OAuthログイン対応。",
+    "longDescription": "# narikitter — AIなりきりチャット\n\nnarikitterは、任意のTwitterユーザーになりきったAIと会話できるチャットサービスです。Yahooリアルタイム検索APIで本人のツイートを分析し、口調や話し方を再現します。\n\n## 主な機能\n\n- **AIなりきりチャット**: Twitterユーザーの公開ツイートからAIが口調を学習し、その人物として会話\n- **バトルモード**: 2人のAIペルソナが会話するバトルモード\n- **グループチャット**: 複数のAIペルソナが参加するグループ会話\n- **Google OAuth認証**: NextAuth.js v5 betaでログイン\\n- **会話共有**: 短縮URL共有、スナップショット画像共有、会話パケット共有\n- **PWA対応**: @ducanh2912/next-pwaでオフラインキャッシュ\n- **動的OGP画像**: ユーザーごとのOGP画像を動的生成（/api/og）\n- **Markdownレンダリング**: react-markdown + remark-gfm + remark-breaksでチャット表示\n\n## 技術スタック\n\n- Next.js 16.1.6、React 19、TypeScript、Tailwind CSS 3.4\n- Prisma + PostgreSQL（サブスクリプション管理、月間使用量トラッキング）\\n- NextAuth.js v5 beta（Google OAuth）\\n- react-markdown 9.0.1、Shinobi-s-tag（広告配信）\n\n## DBスキーマ\n\nSubscription（サブスクリプション管理）、ChatMonthlyUsage（無料枠追跡）",
     "tags": [
       "AI",
       "チャット",
