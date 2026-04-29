@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-white/5 backdrop-blur-md bg-black/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
         <a href="/" className="font-bold text-white hover:text-gray-300 transition-colors flex items-center gap-2">
-          <img src="/icon" alt="" width={20} height={20} className="rounded-sm" />
+          <Image src="/icon" alt="hikamer's portal" width={20} height={20} className="rounded-sm" />
           hikamer&apos;s portal
         </a>
 

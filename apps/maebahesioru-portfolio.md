@@ -25,7 +25,8 @@ maebahesioru-portfolioは、運営者hikamerの個人ポートフォリオサイ
 - Noto Sans JPフォント
 - カスタムCSSアニメーション（キーフレーム）
 - babel-plugin-react-compiler
-- 赤 (#c41e3a) アクセントカラーのダークテーマ\n
+- 赤 (#c41e3a) アクセントカラーのダークテーマ
+
 ## 開発の裏話
 
 20種類以上のSNSのカスタムSVGアイコンを全て自前で描きました。浮遊パーティクルはrequestAnimationFrameを使ったCanvasレンダリングです。

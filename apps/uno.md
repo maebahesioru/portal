@@ -24,7 +24,8 @@ unoは、ブラウザ上でAI相手にUNOをプレイできるカードゲーム
 - Next.js 14.2、React 18.3、TypeScript、Tailwind CSS 3.4
 - GameSetup → GameBoard フロー（クライアントコンポーネント）
 - 純粋なフロントエンドゲーム（外部API・DBなし）
-- PostCSS\n
+- PostCSS
+
 ## 開発の裏話
 
 AIプレイヤー（aiPlayer.ts）は状態ベース戦略で実装。ワイルド+4チャレンジ判定やハウスルールのオンオフをすべてクライアントサイド完結させるのに苦労しました。

@@ -27,7 +27,8 @@ illustsagasitterは、Twitter上のイラストをキーワード検索できる
 - hls.js 1.6.15（動画再生）
 - Yahooリアルタイム検索API → fxtwitter API → vxtwitter API フォールバック
 - babel-plugin-react-compiler
-- OFUSE投げ銭連携（広告なし、完全無料）\n
+- OFUSE投げ銭連携（広告なし、完全無料）
+
 ## 開発の裏話
 
 fxtwitter API → vxtwitter APIのフォールバックチェーンを実装しました。両方のAPIにレート制限があるため、429エラーで自動切り替えするロジックを入れています。
