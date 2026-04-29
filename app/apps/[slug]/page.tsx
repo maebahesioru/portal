@@ -98,10 +98,10 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
 
         {/* OGP Image */}
         {meta?.ogImage ? (
-          <OgpImage src={meta.ogImage} name={app.name} />
+          <OgpImage src={meta.ogImage} name={meta?.title ?? app.name} />
         ) : (
           <div className="w-full h-56 sm:h-80 rounded-2xl overflow-hidden mb-8 border border-white/8">
-            <PlaceholderImage name={app.name} />
+            <PlaceholderImage name={meta?.title ?? app.name} />
           </div>
         )}
 
