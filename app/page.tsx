@@ -9,25 +9,32 @@ type CoolifyApp = { name: string; fqdn: string | null };
 type Sponsor = { userId: string; displayName: string; avatar: string | null; slug: string; big: boolean; expiresAt: string | null };
 
 async function getApps(): Promise<CoolifyApp[]> {
-  const headers = { Authorization: `Bearer ${process.env.COOLIFY_TOKEN}` };
-  const opts = { headers, next: { revalidate: 60 } };
+  try {
+    const headers = { Authorization: `Bearer ${process.env.COOLIFY_TOKEN}` };
+    const opts = { headers, next: { revalidate: 60 } };
 
-  const [appsRes, servicesRes] = await Promise.all([
-    fetch(`${process.env.COOLIFY_URL}/api/v1/applications`, opts),
-    fetch(`${process.env.COOLIFY_URL}/api/v1/services`, opts),
-  ]);
+    const [appsRes, servicesRes] = await Promise.all([
+      fetch(`${process.env.COOLIFY_URL}/api/v1/applications`, opts),
+      fetch(`${process.env.COOLIFY_URL}/api/v1/services`, opts),
+    ]);
 
-  const apps: CoolifyApp[] = await appsRes.json();
+    const apps: CoolifyApp[] = await appsRes.json();
 
-  type Service = { name: string; applications: CoolifyApp[] };
-  const services: Service[] = await servicesRes.json();
-  const serviceApps = services.flatMap((s) =>
-    s.applications.filter((a) => a.fqdn).map((a) => ({ name: a.name, fqdn: a.fqdn }))
-  );
+    type Service = { name: string; applications: CoolifyApp[] };
+    const servicesRaw = await servicesRes.json();
+    const services: Service[] = Array.isArray(servicesRaw) ? servicesRaw : [];
 
-const EXCLUDED = ["discord-auth-bot", "discordauth"];
+    const serviceApps = services.flatMap((s) =>
+      s.applications.filter((a) => a.fqdn).map((a) => ({ name: a.name, fqdn: a.fqdn }))
+    );
 
-  return [...apps, ...serviceApps].filter((a) => a.fqdn && !EXCLUDED.includes(a.name));
+    const appsArr = Array.isArray(apps) ? apps : [];
+    const EXCLUDED = ["discord-auth-bot", "discordauth"];
+
+    return [...appsArr, ...serviceApps].filter((a) => a.fqdn && !EXCLUDED.includes(a.name));
+  } catch {
+    return [];
+  }
 }
 
 async function getSponsors(): Promise<Sponsor[]> {
